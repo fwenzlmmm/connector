@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -9,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using AWSHubService.Interfaces;
 using AWSHubService.Models;
+using System.Security.Cryptography.X509Certificates;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AWSHubService
 {
@@ -36,7 +39,10 @@ namespace AWSHubService
                 options.AutomaticAuthentication = false;
                 options.ForwardClientCertificate = true;
                 options.ForwardWindowsAuthentication = false;
-           });
+            });
+            services.Configure<MvcOptions>(options => {
+                options.Filters.Add(new RequireHttpsAttribute());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +52,12 @@ namespace AWSHubService
             loggerFactory.AddDebug();
 
             app.UseMvc();
+
+            //app.Use(ChangeContextToHttps);
+            //app.UseKestrelHttps(certificate);
+            //app.UseDeveloperExceptionPage();
+
+            app.UseMvcWithDefaultRoute();
         }
     }
 }

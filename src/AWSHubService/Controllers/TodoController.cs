@@ -30,5 +30,16 @@ namespace AWSHubService.Controllers
             }
             return new ObjectResult(item);
         }
+
+        [HttpPost]
+        public IActionResult Create([FromBody] TodoItem item)
+        {
+            if (item == null)
+            {
+                return BadRequest();
+            }
+            TodoItems.Add(item);
+            return CreatedAtRoute("GetTodo", new { id = item.Key }, item);
+        }
     }
 }
