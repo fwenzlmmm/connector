@@ -12,6 +12,7 @@ using AWSHubService.Interfaces;
 using AWSHubService.Models;
 using System.Security.Cryptography.X509Certificates;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Routing;
 
 namespace AWSHubService
 {
@@ -34,15 +35,22 @@ namespace AWSHubService
         {
             // Add framework services.
             services.AddMvc();
+            //services.AddMvc().AddTypedRouting();
             services.AddSingleton<ITodoRepository, TodoRepository>();
+            /*
             services.Configure<IISOptions>(options => {
                 options.AutomaticAuthentication = false;
                 options.ForwardClientCertificate = true;
                 options.ForwardWindowsAuthentication = false;
             });
+            */
+            /*
             services.Configure<MvcOptions>(options => {
                 options.Filters.Add(new RequireHttpsAttribute());
             });
+            */
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

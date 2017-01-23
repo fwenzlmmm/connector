@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Server.Kestrel.Https;
 using System.Security.Cryptography.X509Certificates;
+using System.Text.RegularExpressions;
 
 namespace AWSHubService
 {
@@ -14,26 +15,40 @@ namespace AWSHubService
     {
         public static void Main(string[] args)
         {
-            var pfxFile = Path.Combine(@"c:\certs", "HubClientCert.pfx");
-            X509Certificate2 certificate = new X509Certificate2(pfxFile, "password");
-            string[] baseUrls = new string[] { "http://www.3m.hubservices.com:80", "https://www.3m.hubservices.com:443" };
-            var host = new WebHostBuilder()
-                .UseKestrel(options =>
-                {
-                    HttpsConnectionFilterOptions httpsoptions = new HttpsConnectionFilterOptions();
-                    httpsoptions.ServerCertificate = certificate;
-                    httpsoptions.ClientCertificateMode = ClientCertificateMode.AllowCertificate;
-                    httpsoptions.CheckCertificateRevocation = false;
+            try
+            {
+                X509Certificate2 certificate = GetCert();
+                //string[] baseUrls = new string[] { "http://www.3m.HubServices.Com:8080" };
+                //string[] baseUrls = new string[] { "http://54.85.167.42:8080" };
+                string[] baseUrls = new string[] { "http://10.104.92.89:8080" };
+                var host = new WebHostBuilder()
+                    .UseKestrel()
+                    .UseContentRoot(Directory.GetCurrentDirectory())
+                    .UseIISIntegration()
+                    .UseStartup<Startup>()
+                    .UseUrls(baseUrls)
+                    .Build();
 
-                    options.UseHttps(httpsoptions);
-                })
-                .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseIISIntegration()
-                .UseStartup<Startup>()
-                .UseUrls(baseUrls)
-                .Build();
+                host.Run();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Initializatiuon Error: " + ex.Message + " Stacktrace: " + ex.StackTrace);
+                Console.ReadLine();
+            }
+        }
 
-            host.Run();
+        public static X509Certificate2 GetCert()
+        {
+            X509Store certStore = new X509Store("Root", StoreLocation.LocalMachine);
+            certStore.Open(OpenFlags.ReadOnly | OpenFlags.OpenExistingOnly);
+
+            X509Certificate2Collection collection = (X509Certificate2Collection)certStore.Certificates;
+            X509Certificate2Collection fcollection = (X509Certificate2Collection)collection.Find(X509FindType.FindByThumbprint, Regex.Replace("‎‎‎6b78f93c348fa1ca24f37cf78e177990772e1060", @"[^\da-zA-z]", string.Empty).ToUpper(), false);
+            if (fcollection != null && fcollection.Count > 0)
+                return fcollection[0];
+            else
+                return null;
         }
     }
 }

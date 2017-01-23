@@ -1,8 +1,7 @@
 {
   "dependencies": {
     "Microsoft.NETCore.App": {
-      "version": "1.1.0",
-      "type": "platform"
+      "version": "1.1.0"
     },
     "Microsoft.AspNetCore.Mvc": "1.1.0",
     "Microsoft.AspNetCore.Routing": "1.1.0",
@@ -15,33 +14,40 @@
     "Microsoft.Extensions.Logging.Console": "1.1.0",
     "Microsoft.Extensions.Logging.Debug": "1.1.0",
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.1.0",
-    "Microsoft.AspNetCore.Server.Kestrel.Https": "1.1.0"
+    "Microsoft.AspNetCore.Server.Kestrel.Https": "1.1.0",
+    "Ninject": "4.0.0-beta-0134",
+    "AWSSDK.Core": "3.3.7.1",
+    "AWSSDK.SecurityToken": "3.3.0.8",
+    "AWSSDK.S3": "3.3.5.2",
+    "AspNet.Mvc.TypedRouting": "1.1.0"
   },
-
   "tools": {
-        "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.1.0-preview4-final"
+    "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.1.0-preview4-final"
   },
-
   "frameworks": {
-    "netcoreapp1.0": {
+    "netcoreapp1.1": {
       "imports": [
         "dotnet5.6",
         "portable-net45+win8"
       ]
     }
   },
-
   "buildOptions": {
     "emitEntryPoint": true,
+    "debugType": "portable",
     "preserveCompilationContext": true
   },
-
   "runtimeOptions": {
     "configProperties": {
       "System.GC.Server": true
     }
   },
-
+  "runtimes": {
+    "ubuntu.16.04-x64": {},
+    "linux-x64": {},
+    "win7-x64": {},
+    "win7-x86": {}
+  },
   "publishOptions": {
     "include": [
       "wwwroot",
@@ -50,8 +56,10 @@
       "web.config"
     ]
   },
-
   "scripts": {
     "postpublish": [ "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%" ]
+  },
+  "configurations": {
+    "Linux": {}
   }
 }

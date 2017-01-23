@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:5080",
+      "applicationUrl": "http://W0179776.usac.mmm.com",
       "sslPort": 0
     }
   },
@@ -19,10 +19,11 @@
     "AWSHubService": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "http://www.3m.hubservices.com/api/values",
+      "launchUrl": "http://W0179776.usac.mmm.com/api/values",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
-    }
+    },
+    "Linux": {}
   }
 }
