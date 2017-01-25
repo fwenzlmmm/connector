@@ -14,6 +14,8 @@ namespace AWSHubService.Models
         public string AWSS3BucketName { get; set; }
         public string AWSRegion { get; set; }
         public string AWSEndpointUrl { get; set; }
+        public string ComplianceDB { get; set; }
+        
     }
 
     public class AWS

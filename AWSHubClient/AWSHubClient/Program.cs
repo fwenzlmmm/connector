@@ -26,8 +26,8 @@ namespace AWSHubClient
             {
                 Task task = SendRequest(ConfigurationManager.AppSettings["URL"]);
                 task.Wait();
-                //task = SendRequestUsingClientCertificate(ConfigurationManager.AppSettings["URL"]);
-                //task.Wait();
+                task = SendRequestUsingClientCertificate(ConfigurationManager.AppSettings["URL"]);
+                task.Wait();
             }
             catch (Exception ex)
             {

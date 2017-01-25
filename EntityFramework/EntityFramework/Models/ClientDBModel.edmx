@@ -1,0 +1,1536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ClientDB_237006Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="GetInpatientData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DateStart" Type="datetime" Mode="In" />
+          <Parameter Name="DateEnd" Type="datetime" Mode="In" />
+          <Parameter Name="Final" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GetOutpatientData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DateStart" Type="datetime" Mode="In" />
+          <Parameter Name="DateEnd" Type="datetime" Mode="In" />
+          <Parameter Name="Final" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="ClientDB_237006ModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ClientDB_237006Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ClientDB_237006Entities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="GetInpatientData" ReturnType="Collection(ClientDB_237006Model.GetInpatientData_Result)">
+            <Parameter Name="DateStart" Mode="In" Type="DateTime" />
+            <Parameter Name="DateEnd" Mode="In" Type="DateTime" />
+            <Parameter Name="Final" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetOutpatientData" ReturnType="Collection(ClientDB_237006Model.GetOutpatientData_Result)">
+            <Parameter Name="DateStart" Mode="In" Type="DateTime" />
+            <Parameter Name="DateEnd" Mode="In" Type="DateTime" />
+            <Parameter Name="Final" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="GetInpatientData_Result">
+          <Property Type="String" Name="EnterpriseName" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="EnterpriseID" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="ExportQueueKey" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="EventTypeKey" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="RecordType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CodeSetKey" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="VisitKey" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="FacilityName" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="WorkingOrFinal" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PatientClassifications3M" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PatientType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PatientTypeDescription" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="VisitType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="VisitTypeDescription" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PatientLastName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PatientFirstName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PatientMiddleName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PatientAlias" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="StreetAddress1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="StreetAddress2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ZipCode" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="County" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Country" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Phone" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CellPhone" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Fax" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="BirthDateTime" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="BirthWeight" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Sex" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MaritalStatus" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Race" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="RaceDescription" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Ethnicity" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="EthnicityDescription" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SSN" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CitizenshipStatus" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MilitaryStatus" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DriversLicenseNumber" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ProviderId" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ProviderNumber" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PatientId" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MRN" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ClaimID" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="AdmitDate" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="AdmitHour" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TypeOfAdmission" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="AdmissionTypeDescription" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MarylandNatureOfAdmission" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MarylandNatureOfAdmissionDescription" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PointOfOrigin" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="AgeInDays" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="AgeInYears" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="IcdVersionQualifier" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="AdmitDiagnosis" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PrincipalDiagnosis" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PrincipalDiagnosisPOA" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PrincipalProcedure" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PrincipalProcedureDate" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="LOS" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DischargeDate" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DischargeHour" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DischargeStatus" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DischargeStatusLocal" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PrimaryPayer" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryPayer" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TertiaryPayer" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="FinancialClass" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Coder" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Reviewer" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="NursingUnit" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PatientRoom" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PatientBed" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="AttendingNPI" Nullable="true" MaxLength="35" />
+          <Property Type="String" Name="AttendingName" Nullable="true" MaxLength="400" />
+          <Property Type="String" Name="AttendingDepartment" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OperatingNPI" Nullable="true" MaxLength="35" />
+          <Property Type="String" Name="OperatingName" Nullable="true" MaxLength="400" />
+          <Property Type="String" Name="OperatingDepartment" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OthOperatingNPI" Nullable="true" MaxLength="35" />
+          <Property Type="String" Name="OthOperatingName" Nullable="true" MaxLength="400" />
+          <Property Type="String" Name="OthOperatingDepartment" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="RenderingNPI" Nullable="true" MaxLength="35" />
+          <Property Type="String" Name="RenderingName" Nullable="true" MaxLength="400" />
+          <Property Type="String" Name="RenderingDepartment" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="GrouperType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="GrouperVersion" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PaymentDRG" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PaymentSOI" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TotalCharges" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TotalNonCharges" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TypeOfBill" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PreviousDischargeDate" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="BrainInjuryReserveFlag" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CancerReserveFlag" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TypeOfService" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DeathDate" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ConditionCode1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ConditionCode2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ConditionCode3" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ConditionCode4" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ConditionCode5" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ConditionCode6" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ConditionCode7" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ConditionCode8" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ConditionCode9" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ConditionCode10" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ConditionCode11" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceSpanCode1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceSpanCodeFromDate1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceSpanCodeThroughDate1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceSpanCode2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceSpanCodeFromDate2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceSpanCodeThroughDate2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceSpanCode3" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceSpanCodeFromDate3" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceSpanCodeThroughDate3" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceSpanCode4" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceSpanCodeFromDate4" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceSpanCodeThroughDate4" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceSpanCode5" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceSpanCodeFromDate5" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceSpanCodeThroughDate5" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCode1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCodeAmount1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCode2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCodeAmount2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCode3" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCodeAmount3" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCode4" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCodeAmount4" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCode5" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCodeAmount5" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCode6" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCodeAmount6" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCode7" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCodeAmount7" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCode8" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCodeAmount8" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCode9" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCodeAmount9" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCode10" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCodeAmount10" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCode11" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCodeAmount11" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCode12" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCodeAmount12" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis3" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA3" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis4" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA4" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis5" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA5" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis6" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA6" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis7" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA7" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis8" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA8" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis9" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA9" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis10" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA10" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis11" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA11" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis12" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA12" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis13" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA13" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis14" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA14" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis15" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA15" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis16" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA16" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis17" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA17" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis18" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA18" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis19" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA19" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis20" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA20" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis21" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA21" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis22" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA22" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis23" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA23" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis24" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA24" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis25" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA25" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis26" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA26" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis27" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA27" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis28" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA28" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis29" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA29" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis30" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA30" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis31" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA31" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis32" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA32" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis33" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA33" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis34" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA34" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis35" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA35" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis36" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA36" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis37" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA37" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis38" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA38" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis39" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA39" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis40" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA40" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis41" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA41" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis42" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA42" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis43" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA43" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis44" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA44" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis45" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA45" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis46" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA46" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis47" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA47" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis48" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA48" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis49" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA49" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis50" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA50" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis51" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA51" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis52" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA52" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis53" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA53" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis54" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA54" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis55" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA55" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis56" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA56" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis57" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA57" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis58" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA58" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis59" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA59" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis60" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA60" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis61" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA61" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis62" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA62" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis63" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA63" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis64" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA64" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis65" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA65" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis66" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA66" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis67" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA67" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis68" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA68" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis69" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA69" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis70" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA70" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis71" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA71" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis72" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA72" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis73" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA73" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis74" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA74" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis75" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA75" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis76" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA76" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis77" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA77" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis78" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA78" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis79" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA79" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis80" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA80" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis81" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA81" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis82" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA82" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis83" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA83" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis84" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA84" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis85" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA85" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis86" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA86" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis87" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA87" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis88" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA88" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis89" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA89" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis90" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA90" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis91" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA91" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis92" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA92" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis93" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA93" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis94" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA94" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis95" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA95" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis96" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA96" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis97" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA97" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis98" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA98" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis99" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA99" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure3" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate3" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure4" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate4" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure5" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate5" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure6" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate6" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure7" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate7" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure8" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate8" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure9" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate9" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure10" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate10" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure11" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate11" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure12" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate12" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure13" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate13" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure14" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate14" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure15" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate15" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure16" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate16" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure17" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate17" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure18" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate18" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure19" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate19" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure20" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate20" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure21" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate21" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure22" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate22" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure23" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate23" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure24" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate24" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure25" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate25" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure26" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate26" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure27" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate27" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure28" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate28" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure29" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate29" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure30" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate30" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure31" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate31" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure32" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate32" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure33" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate33" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure34" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate34" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure35" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate35" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure36" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate36" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure37" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate37" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure38" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate38" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure39" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate39" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure40" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate40" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure41" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate41" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure42" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate42" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure43" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate43" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure44" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate44" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure45" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate45" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure46" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate46" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure47" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate47" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure48" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate48" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure49" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate49" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure50" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate50" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure51" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate51" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure52" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate52" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure53" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate53" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure54" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate54" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure55" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate55" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure56" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate56" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure57" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate57" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure58" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate58" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure59" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate59" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure60" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate60" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure61" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate61" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure62" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate62" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure63" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate63" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure64" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate64" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure65" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate65" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure66" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate66" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure67" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate67" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure68" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate68" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure69" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate69" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure70" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate70" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure71" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate71" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure72" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate72" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure73" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate73" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure74" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate74" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure75" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate75" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure76" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate76" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure77" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate77" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure78" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate78" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure79" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate79" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure80" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate80" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure81" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate81" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure82" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate82" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure83" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate83" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure84" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate84" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure85" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate85" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure86" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate86" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure87" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate87" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure88" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate88" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure89" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate89" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure90" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate90" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure91" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate91" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure92" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate92" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure93" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate93" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure94" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate94" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure95" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate95" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure96" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate96" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure97" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate97" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure98" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate98" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedure99" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryProcedureDate99" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="GetOutpatientData_Result">
+          <Property Type="String" Name="EnterpriseName" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="EnterpriseID" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="ExportQueueKey" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="EventTypeKey" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="RecordType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CodeSetKey" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="VisitKey" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="FacilityName" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="WorkingOrFinal" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PatientClassifications3M" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PatientType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PatientTypeDescription" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="VisitType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="VisitTypeDescription" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PatientLastName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PatientFirstName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PatientMiddleName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PatientAlias" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="StreetAddress1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="StreetAddress2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ZipCode" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="County" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Country" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Phone" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CellPhone" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Fax" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="BirthDateTime" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Sex" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MaritalStatus" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Race" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="RaceDescription" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Ethnicity" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="EthnicityDescription" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SSN" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CitizenshipStatus" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MilitaryStatus" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DriversLicenseNumber" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ProviderId" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ProviderNumber" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PatientId" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MRN" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ClaimID" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="FromDate" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TypeOfAdmission" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="AdmissionTypeDescription" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="AgeInDays" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="AgeInYears" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="IcdVersionQualifier" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ReasonForVisitDiagnosis1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ReasonForVisitDiagnosis2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ReasonForVisitDiagnosis3" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="AdmitDiagnosis" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PrincipalDiagnosis" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PrincipalDiagnosisPOA" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DischargeDate" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DischargeStatus" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DischargeStatusLocal" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PrimaryPayer" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="SecondaryPayer" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TertiaryPayer" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="FinancialClass" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="AttendingNPI" Nullable="true" MaxLength="35" />
+          <Property Type="String" Name="AttendingName" Nullable="true" MaxLength="400" />
+          <Property Type="String" Name="AttendingDepartment" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OperatingNPI" Nullable="true" MaxLength="35" />
+          <Property Type="String" Name="OperatingName" Nullable="true" MaxLength="400" />
+          <Property Type="String" Name="OperatingDepartment" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ReferringNPI" Nullable="true" MaxLength="35" />
+          <Property Type="String" Name="ReferringName" Nullable="true" MaxLength="400" />
+          <Property Type="String" Name="ReferringDepartment" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="RenderingNPI" Nullable="true" MaxLength="35" />
+          <Property Type="String" Name="RenderingName" Nullable="true" MaxLength="400" />
+          <Property Type="String" Name="RenderingDepartment" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="GrouperType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="GrouperVersion" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TotalCharges" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TotalNonCharges" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TypeOfBill" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DeathDate" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ConditionCode1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ConditionCode2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ConditionCode3" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ConditionCode4" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ConditionCode5" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ConditionCode6" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ConditionCode7" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ConditionCode8" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ConditionCode9" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ConditionCode10" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ConditionCode11" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceCode1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceCodeDate1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceCode2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceCodeDate2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceCode3" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceCodeDate3" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceCode4" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceCodeDate4" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceCode5" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceCodeDate5" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceCode6" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceCodeDate6" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceCode7" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceCodeDate7" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceCode8" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceCodeDate8" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceCode9" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceCodeDate9" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceCode10" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OccurrenceCodeDate10" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCode1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCodeAmount1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCode2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCodeAmount2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCode3" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCodeAmount3" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCode4" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCodeAmount4" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCode5" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCodeAmount5" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCode6" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCodeAmount6" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCode7" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCodeAmount7" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCode8" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCodeAmount8" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCode9" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCodeAmount9" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCode10" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCodeAmount10" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCode11" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCodeAmount11" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCode12" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ValueCodeAmount12" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis3" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA3" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis4" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA4" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis5" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA5" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis6" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA6" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis7" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA7" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis8" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA8" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis9" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA9" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis10" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA10" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis11" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA11" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis12" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA12" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis13" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA13" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis14" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA14" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis15" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA15" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis16" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA16" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis17" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA17" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis18" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA18" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis19" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA19" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis20" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA20" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis21" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA21" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis22" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA22" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosis23" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SecondaryDiagnosisPOA23" Nullable="true" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ClientDB_237006ModelStoreContainer" CdmEntityContainer="ClientDB_237006Entities" >
+          <FunctionImportMapping FunctionImportName="GetInpatientData" FunctionName="ClientDB_237006Model.Store.GetInpatientData">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ClientDB_237006Model.GetInpatientData_Result">
+                <ScalarProperty Name="EnterpriseName" ColumnName="EnterpriseName" />
+                <ScalarProperty Name="EnterpriseID" ColumnName="EnterpriseID" />
+                <ScalarProperty Name="ExportQueueKey" ColumnName="ExportQueueKey" />
+                <ScalarProperty Name="EventTypeKey" ColumnName="EventTypeKey" />
+                <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+                <ScalarProperty Name="CodeSetKey" ColumnName="CodeSetKey" />
+                <ScalarProperty Name="VisitKey" ColumnName="VisitKey" />
+                <ScalarProperty Name="FacilityName" ColumnName="FacilityName" />
+                <ScalarProperty Name="WorkingOrFinal" ColumnName="WorkingOrFinal" />
+                <ScalarProperty Name="PatientClassifications3M" ColumnName="PatientClassifications3M" />
+                <ScalarProperty Name="PatientType" ColumnName="PatientType" />
+                <ScalarProperty Name="PatientTypeDescription" ColumnName="PatientTypeDescription" />
+                <ScalarProperty Name="VisitType" ColumnName="VisitType" />
+                <ScalarProperty Name="VisitTypeDescription" ColumnName="VisitTypeDescription" />
+                <ScalarProperty Name="PatientLastName" ColumnName="PatientLastName" />
+                <ScalarProperty Name="PatientFirstName" ColumnName="PatientFirstName" />
+                <ScalarProperty Name="PatientMiddleName" ColumnName="PatientMiddleName" />
+                <ScalarProperty Name="PatientAlias" ColumnName="PatientAlias" />
+                <ScalarProperty Name="StreetAddress1" ColumnName="StreetAddress1" />
+                <ScalarProperty Name="StreetAddress2" ColumnName="StreetAddress2" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="County" ColumnName="County" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="BirthDateTime" ColumnName="BirthDateTime" />
+                <ScalarProperty Name="BirthWeight" ColumnName="BirthWeight" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+                <ScalarProperty Name="Race" ColumnName="Race" />
+                <ScalarProperty Name="RaceDescription" ColumnName="RaceDescription" />
+                <ScalarProperty Name="Ethnicity" ColumnName="Ethnicity" />
+                <ScalarProperty Name="EthnicityDescription" ColumnName="EthnicityDescription" />
+                <ScalarProperty Name="SSN" ColumnName="SSN" />
+                <ScalarProperty Name="CitizenshipStatus" ColumnName="CitizenshipStatus" />
+                <ScalarProperty Name="MilitaryStatus" ColumnName="MilitaryStatus" />
+                <ScalarProperty Name="DriversLicenseNumber" ColumnName="DriversLicenseNumber" />
+                <ScalarProperty Name="ProviderId" ColumnName="ProviderId" />
+                <ScalarProperty Name="ProviderNumber" ColumnName="ProviderNumber" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="MRN" ColumnName="MRN" />
+                <ScalarProperty Name="ClaimID" ColumnName="ClaimID" />
+                <ScalarProperty Name="AdmitDate" ColumnName="AdmitDate" />
+                <ScalarProperty Name="AdmitHour" ColumnName="AdmitHour" />
+                <ScalarProperty Name="TypeOfAdmission" ColumnName="TypeOfAdmission" />
+                <ScalarProperty Name="AdmissionTypeDescription" ColumnName="AdmissionTypeDescription" />
+                <ScalarProperty Name="MarylandNatureOfAdmission" ColumnName="MarylandNatureOfAdmission" />
+                <ScalarProperty Name="MarylandNatureOfAdmissionDescription" ColumnName="MarylandNatureOfAdmissionDescription" />
+                <ScalarProperty Name="PointOfOrigin" ColumnName="PointOfOrigin" />
+                <ScalarProperty Name="AgeInDays" ColumnName="AgeInDays" />
+                <ScalarProperty Name="AgeInYears" ColumnName="AgeInYears" />
+                <ScalarProperty Name="IcdVersionQualifier" ColumnName="IcdVersionQualifier" />
+                <ScalarProperty Name="AdmitDiagnosis" ColumnName="AdmitDiagnosis" />
+                <ScalarProperty Name="PrincipalDiagnosis" ColumnName="PrincipalDiagnosis" />
+                <ScalarProperty Name="PrincipalDiagnosisPOA" ColumnName="PrincipalDiagnosisPOA" />
+                <ScalarProperty Name="PrincipalProcedure" ColumnName="PrincipalProcedure" />
+                <ScalarProperty Name="PrincipalProcedureDate" ColumnName="PrincipalProcedureDate" />
+                <ScalarProperty Name="LOS" ColumnName="LOS" />
+                <ScalarProperty Name="DischargeDate" ColumnName="DischargeDate" />
+                <ScalarProperty Name="DischargeHour" ColumnName="DischargeHour" />
+                <ScalarProperty Name="DischargeStatus" ColumnName="DischargeStatus" />
+                <ScalarProperty Name="DischargeStatusLocal" ColumnName="DischargeStatusLocal" />
+                <ScalarProperty Name="PrimaryPayer" ColumnName="PrimaryPayer" />
+                <ScalarProperty Name="SecondaryPayer" ColumnName="SecondaryPayer" />
+                <ScalarProperty Name="TertiaryPayer" ColumnName="TertiaryPayer" />
+                <ScalarProperty Name="FinancialClass" ColumnName="FinancialClass" />
+                <ScalarProperty Name="Coder" ColumnName="Coder" />
+                <ScalarProperty Name="Reviewer" ColumnName="Reviewer" />
+                <ScalarProperty Name="NursingUnit" ColumnName="NursingUnit" />
+                <ScalarProperty Name="PatientRoom" ColumnName="PatientRoom" />
+                <ScalarProperty Name="PatientBed" ColumnName="PatientBed" />
+                <ScalarProperty Name="AttendingNPI" ColumnName="AttendingNPI" />
+                <ScalarProperty Name="AttendingName" ColumnName="AttendingName" />
+                <ScalarProperty Name="AttendingDepartment" ColumnName="AttendingDepartment" />
+                <ScalarProperty Name="OperatingNPI" ColumnName="OperatingNPI" />
+                <ScalarProperty Name="OperatingName" ColumnName="OperatingName" />
+                <ScalarProperty Name="OperatingDepartment" ColumnName="OperatingDepartment" />
+                <ScalarProperty Name="OthOperatingNPI" ColumnName="OthOperatingNPI" />
+                <ScalarProperty Name="OthOperatingName" ColumnName="OthOperatingName" />
+                <ScalarProperty Name="OthOperatingDepartment" ColumnName="OthOperatingDepartment" />
+                <ScalarProperty Name="RenderingNPI" ColumnName="RenderingNPI" />
+                <ScalarProperty Name="RenderingName" ColumnName="RenderingName" />
+                <ScalarProperty Name="RenderingDepartment" ColumnName="RenderingDepartment" />
+                <ScalarProperty Name="GrouperType" ColumnName="GrouperType" />
+                <ScalarProperty Name="GrouperVersion" ColumnName="GrouperVersion" />
+                <ScalarProperty Name="PaymentDRG" ColumnName="PaymentDRG" />
+                <ScalarProperty Name="PaymentSOI" ColumnName="PaymentSOI" />
+                <ScalarProperty Name="TotalCharges" ColumnName="TotalCharges" />
+                <ScalarProperty Name="TotalNonCharges" ColumnName="TotalNonCharges" />
+                <ScalarProperty Name="TypeOfBill" ColumnName="TypeOfBill" />
+                <ScalarProperty Name="PreviousDischargeDate" ColumnName="PreviousDischargeDate" />
+                <ScalarProperty Name="BrainInjuryReserveFlag" ColumnName="BrainInjuryReserveFlag" />
+                <ScalarProperty Name="CancerReserveFlag" ColumnName="CancerReserveFlag" />
+                <ScalarProperty Name="TypeOfService" ColumnName="TypeOfService" />
+                <ScalarProperty Name="DeathDate" ColumnName="DeathDate" />
+                <ScalarProperty Name="ConditionCode1" ColumnName="ConditionCode1" />
+                <ScalarProperty Name="ConditionCode2" ColumnName="ConditionCode2" />
+                <ScalarProperty Name="ConditionCode3" ColumnName="ConditionCode3" />
+                <ScalarProperty Name="ConditionCode4" ColumnName="ConditionCode4" />
+                <ScalarProperty Name="ConditionCode5" ColumnName="ConditionCode5" />
+                <ScalarProperty Name="ConditionCode6" ColumnName="ConditionCode6" />
+                <ScalarProperty Name="ConditionCode7" ColumnName="ConditionCode7" />
+                <ScalarProperty Name="ConditionCode8" ColumnName="ConditionCode8" />
+                <ScalarProperty Name="ConditionCode9" ColumnName="ConditionCode9" />
+                <ScalarProperty Name="ConditionCode10" ColumnName="ConditionCode10" />
+                <ScalarProperty Name="ConditionCode11" ColumnName="ConditionCode11" />
+                <ScalarProperty Name="OccurrenceSpanCode1" ColumnName="OccurrenceSpanCode1" />
+                <ScalarProperty Name="OccurrenceSpanCodeFromDate1" ColumnName="OccurrenceSpanCodeFromDate1" />
+                <ScalarProperty Name="OccurrenceSpanCodeThroughDate1" ColumnName="OccurrenceSpanCodeThroughDate1" />
+                <ScalarProperty Name="OccurrenceSpanCode2" ColumnName="OccurrenceSpanCode2" />
+                <ScalarProperty Name="OccurrenceSpanCodeFromDate2" ColumnName="OccurrenceSpanCodeFromDate2" />
+                <ScalarProperty Name="OccurrenceSpanCodeThroughDate2" ColumnName="OccurrenceSpanCodeThroughDate2" />
+                <ScalarProperty Name="OccurrenceSpanCode3" ColumnName="OccurrenceSpanCode3" />
+                <ScalarProperty Name="OccurrenceSpanCodeFromDate3" ColumnName="OccurrenceSpanCodeFromDate3" />
+                <ScalarProperty Name="OccurrenceSpanCodeThroughDate3" ColumnName="OccurrenceSpanCodeThroughDate3" />
+                <ScalarProperty Name="OccurrenceSpanCode4" ColumnName="OccurrenceSpanCode4" />
+                <ScalarProperty Name="OccurrenceSpanCodeFromDate4" ColumnName="OccurrenceSpanCodeFromDate4" />
+                <ScalarProperty Name="OccurrenceSpanCodeThroughDate4" ColumnName="OccurrenceSpanCodeThroughDate4" />
+                <ScalarProperty Name="OccurrenceSpanCode5" ColumnName="OccurrenceSpanCode5" />
+                <ScalarProperty Name="OccurrenceSpanCodeFromDate5" ColumnName="OccurrenceSpanCodeFromDate5" />
+                <ScalarProperty Name="OccurrenceSpanCodeThroughDate5" ColumnName="OccurrenceSpanCodeThroughDate5" />
+                <ScalarProperty Name="ValueCode1" ColumnName="ValueCode1" />
+                <ScalarProperty Name="ValueCodeAmount1" ColumnName="ValueCodeAmount1" />
+                <ScalarProperty Name="ValueCode2" ColumnName="ValueCode2" />
+                <ScalarProperty Name="ValueCodeAmount2" ColumnName="ValueCodeAmount2" />
+                <ScalarProperty Name="ValueCode3" ColumnName="ValueCode3" />
+                <ScalarProperty Name="ValueCodeAmount3" ColumnName="ValueCodeAmount3" />
+                <ScalarProperty Name="ValueCode4" ColumnName="ValueCode4" />
+                <ScalarProperty Name="ValueCodeAmount4" ColumnName="ValueCodeAmount4" />
+                <ScalarProperty Name="ValueCode5" ColumnName="ValueCode5" />
+                <ScalarProperty Name="ValueCodeAmount5" ColumnName="ValueCodeAmount5" />
+                <ScalarProperty Name="ValueCode6" ColumnName="ValueCode6" />
+                <ScalarProperty Name="ValueCodeAmount6" ColumnName="ValueCodeAmount6" />
+                <ScalarProperty Name="ValueCode7" ColumnName="ValueCode7" />
+                <ScalarProperty Name="ValueCodeAmount7" ColumnName="ValueCodeAmount7" />
+                <ScalarProperty Name="ValueCode8" ColumnName="ValueCode8" />
+                <ScalarProperty Name="ValueCodeAmount8" ColumnName="ValueCodeAmount8" />
+                <ScalarProperty Name="ValueCode9" ColumnName="ValueCode9" />
+                <ScalarProperty Name="ValueCodeAmount9" ColumnName="ValueCodeAmount9" />
+                <ScalarProperty Name="ValueCode10" ColumnName="ValueCode10" />
+                <ScalarProperty Name="ValueCodeAmount10" ColumnName="ValueCodeAmount10" />
+                <ScalarProperty Name="ValueCode11" ColumnName="ValueCode11" />
+                <ScalarProperty Name="ValueCodeAmount11" ColumnName="ValueCodeAmount11" />
+                <ScalarProperty Name="ValueCode12" ColumnName="ValueCode12" />
+                <ScalarProperty Name="ValueCodeAmount12" ColumnName="ValueCodeAmount12" />
+                <ScalarProperty Name="SecondaryDiagnosis1" ColumnName="SecondaryDiagnosis1" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA1" ColumnName="SecondaryDiagnosisPOA1" />
+                <ScalarProperty Name="SecondaryDiagnosis2" ColumnName="SecondaryDiagnosis2" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA2" ColumnName="SecondaryDiagnosisPOA2" />
+                <ScalarProperty Name="SecondaryDiagnosis3" ColumnName="SecondaryDiagnosis3" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA3" ColumnName="SecondaryDiagnosisPOA3" />
+                <ScalarProperty Name="SecondaryDiagnosis4" ColumnName="SecondaryDiagnosis4" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA4" ColumnName="SecondaryDiagnosisPOA4" />
+                <ScalarProperty Name="SecondaryDiagnosis5" ColumnName="SecondaryDiagnosis5" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA5" ColumnName="SecondaryDiagnosisPOA5" />
+                <ScalarProperty Name="SecondaryDiagnosis6" ColumnName="SecondaryDiagnosis6" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA6" ColumnName="SecondaryDiagnosisPOA6" />
+                <ScalarProperty Name="SecondaryDiagnosis7" ColumnName="SecondaryDiagnosis7" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA7" ColumnName="SecondaryDiagnosisPOA7" />
+                <ScalarProperty Name="SecondaryDiagnosis8" ColumnName="SecondaryDiagnosis8" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA8" ColumnName="SecondaryDiagnosisPOA8" />
+                <ScalarProperty Name="SecondaryDiagnosis9" ColumnName="SecondaryDiagnosis9" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA9" ColumnName="SecondaryDiagnosisPOA9" />
+                <ScalarProperty Name="SecondaryDiagnosis10" ColumnName="SecondaryDiagnosis10" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA10" ColumnName="SecondaryDiagnosisPOA10" />
+                <ScalarProperty Name="SecondaryDiagnosis11" ColumnName="SecondaryDiagnosis11" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA11" ColumnName="SecondaryDiagnosisPOA11" />
+                <ScalarProperty Name="SecondaryDiagnosis12" ColumnName="SecondaryDiagnosis12" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA12" ColumnName="SecondaryDiagnosisPOA12" />
+                <ScalarProperty Name="SecondaryDiagnosis13" ColumnName="SecondaryDiagnosis13" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA13" ColumnName="SecondaryDiagnosisPOA13" />
+                <ScalarProperty Name="SecondaryDiagnosis14" ColumnName="SecondaryDiagnosis14" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA14" ColumnName="SecondaryDiagnosisPOA14" />
+                <ScalarProperty Name="SecondaryDiagnosis15" ColumnName="SecondaryDiagnosis15" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA15" ColumnName="SecondaryDiagnosisPOA15" />
+                <ScalarProperty Name="SecondaryDiagnosis16" ColumnName="SecondaryDiagnosis16" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA16" ColumnName="SecondaryDiagnosisPOA16" />
+                <ScalarProperty Name="SecondaryDiagnosis17" ColumnName="SecondaryDiagnosis17" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA17" ColumnName="SecondaryDiagnosisPOA17" />
+                <ScalarProperty Name="SecondaryDiagnosis18" ColumnName="SecondaryDiagnosis18" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA18" ColumnName="SecondaryDiagnosisPOA18" />
+                <ScalarProperty Name="SecondaryDiagnosis19" ColumnName="SecondaryDiagnosis19" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA19" ColumnName="SecondaryDiagnosisPOA19" />
+                <ScalarProperty Name="SecondaryDiagnosis20" ColumnName="SecondaryDiagnosis20" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA20" ColumnName="SecondaryDiagnosisPOA20" />
+                <ScalarProperty Name="SecondaryDiagnosis21" ColumnName="SecondaryDiagnosis21" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA21" ColumnName="SecondaryDiagnosisPOA21" />
+                <ScalarProperty Name="SecondaryDiagnosis22" ColumnName="SecondaryDiagnosis22" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA22" ColumnName="SecondaryDiagnosisPOA22" />
+                <ScalarProperty Name="SecondaryDiagnosis23" ColumnName="SecondaryDiagnosis23" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA23" ColumnName="SecondaryDiagnosisPOA23" />
+                <ScalarProperty Name="SecondaryDiagnosis24" ColumnName="SecondaryDiagnosis24" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA24" ColumnName="SecondaryDiagnosisPOA24" />
+                <ScalarProperty Name="SecondaryDiagnosis25" ColumnName="SecondaryDiagnosis25" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA25" ColumnName="SecondaryDiagnosisPOA25" />
+                <ScalarProperty Name="SecondaryDiagnosis26" ColumnName="SecondaryDiagnosis26" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA26" ColumnName="SecondaryDiagnosisPOA26" />
+                <ScalarProperty Name="SecondaryDiagnosis27" ColumnName="SecondaryDiagnosis27" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA27" ColumnName="SecondaryDiagnosisPOA27" />
+                <ScalarProperty Name="SecondaryDiagnosis28" ColumnName="SecondaryDiagnosis28" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA28" ColumnName="SecondaryDiagnosisPOA28" />
+                <ScalarProperty Name="SecondaryDiagnosis29" ColumnName="SecondaryDiagnosis29" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA29" ColumnName="SecondaryDiagnosisPOA29" />
+                <ScalarProperty Name="SecondaryDiagnosis30" ColumnName="SecondaryDiagnosis30" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA30" ColumnName="SecondaryDiagnosisPOA30" />
+                <ScalarProperty Name="SecondaryDiagnosis31" ColumnName="SecondaryDiagnosis31" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA31" ColumnName="SecondaryDiagnosisPOA31" />
+                <ScalarProperty Name="SecondaryDiagnosis32" ColumnName="SecondaryDiagnosis32" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA32" ColumnName="SecondaryDiagnosisPOA32" />
+                <ScalarProperty Name="SecondaryDiagnosis33" ColumnName="SecondaryDiagnosis33" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA33" ColumnName="SecondaryDiagnosisPOA33" />
+                <ScalarProperty Name="SecondaryDiagnosis34" ColumnName="SecondaryDiagnosis34" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA34" ColumnName="SecondaryDiagnosisPOA34" />
+                <ScalarProperty Name="SecondaryDiagnosis35" ColumnName="SecondaryDiagnosis35" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA35" ColumnName="SecondaryDiagnosisPOA35" />
+                <ScalarProperty Name="SecondaryDiagnosis36" ColumnName="SecondaryDiagnosis36" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA36" ColumnName="SecondaryDiagnosisPOA36" />
+                <ScalarProperty Name="SecondaryDiagnosis37" ColumnName="SecondaryDiagnosis37" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA37" ColumnName="SecondaryDiagnosisPOA37" />
+                <ScalarProperty Name="SecondaryDiagnosis38" ColumnName="SecondaryDiagnosis38" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA38" ColumnName="SecondaryDiagnosisPOA38" />
+                <ScalarProperty Name="SecondaryDiagnosis39" ColumnName="SecondaryDiagnosis39" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA39" ColumnName="SecondaryDiagnosisPOA39" />
+                <ScalarProperty Name="SecondaryDiagnosis40" ColumnName="SecondaryDiagnosis40" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA40" ColumnName="SecondaryDiagnosisPOA40" />
+                <ScalarProperty Name="SecondaryDiagnosis41" ColumnName="SecondaryDiagnosis41" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA41" ColumnName="SecondaryDiagnosisPOA41" />
+                <ScalarProperty Name="SecondaryDiagnosis42" ColumnName="SecondaryDiagnosis42" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA42" ColumnName="SecondaryDiagnosisPOA42" />
+                <ScalarProperty Name="SecondaryDiagnosis43" ColumnName="SecondaryDiagnosis43" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA43" ColumnName="SecondaryDiagnosisPOA43" />
+                <ScalarProperty Name="SecondaryDiagnosis44" ColumnName="SecondaryDiagnosis44" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA44" ColumnName="SecondaryDiagnosisPOA44" />
+                <ScalarProperty Name="SecondaryDiagnosis45" ColumnName="SecondaryDiagnosis45" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA45" ColumnName="SecondaryDiagnosisPOA45" />
+                <ScalarProperty Name="SecondaryDiagnosis46" ColumnName="SecondaryDiagnosis46" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA46" ColumnName="SecondaryDiagnosisPOA46" />
+                <ScalarProperty Name="SecondaryDiagnosis47" ColumnName="SecondaryDiagnosis47" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA47" ColumnName="SecondaryDiagnosisPOA47" />
+                <ScalarProperty Name="SecondaryDiagnosis48" ColumnName="SecondaryDiagnosis48" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA48" ColumnName="SecondaryDiagnosisPOA48" />
+                <ScalarProperty Name="SecondaryDiagnosis49" ColumnName="SecondaryDiagnosis49" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA49" ColumnName="SecondaryDiagnosisPOA49" />
+                <ScalarProperty Name="SecondaryDiagnosis50" ColumnName="SecondaryDiagnosis50" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA50" ColumnName="SecondaryDiagnosisPOA50" />
+                <ScalarProperty Name="SecondaryDiagnosis51" ColumnName="SecondaryDiagnosis51" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA51" ColumnName="SecondaryDiagnosisPOA51" />
+                <ScalarProperty Name="SecondaryDiagnosis52" ColumnName="SecondaryDiagnosis52" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA52" ColumnName="SecondaryDiagnosisPOA52" />
+                <ScalarProperty Name="SecondaryDiagnosis53" ColumnName="SecondaryDiagnosis53" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA53" ColumnName="SecondaryDiagnosisPOA53" />
+                <ScalarProperty Name="SecondaryDiagnosis54" ColumnName="SecondaryDiagnosis54" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA54" ColumnName="SecondaryDiagnosisPOA54" />
+                <ScalarProperty Name="SecondaryDiagnosis55" ColumnName="SecondaryDiagnosis55" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA55" ColumnName="SecondaryDiagnosisPOA55" />
+                <ScalarProperty Name="SecondaryDiagnosis56" ColumnName="SecondaryDiagnosis56" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA56" ColumnName="SecondaryDiagnosisPOA56" />
+                <ScalarProperty Name="SecondaryDiagnosis57" ColumnName="SecondaryDiagnosis57" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA57" ColumnName="SecondaryDiagnosisPOA57" />
+                <ScalarProperty Name="SecondaryDiagnosis58" ColumnName="SecondaryDiagnosis58" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA58" ColumnName="SecondaryDiagnosisPOA58" />
+                <ScalarProperty Name="SecondaryDiagnosis59" ColumnName="SecondaryDiagnosis59" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA59" ColumnName="SecondaryDiagnosisPOA59" />
+                <ScalarProperty Name="SecondaryDiagnosis60" ColumnName="SecondaryDiagnosis60" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA60" ColumnName="SecondaryDiagnosisPOA60" />
+                <ScalarProperty Name="SecondaryDiagnosis61" ColumnName="SecondaryDiagnosis61" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA61" ColumnName="SecondaryDiagnosisPOA61" />
+                <ScalarProperty Name="SecondaryDiagnosis62" ColumnName="SecondaryDiagnosis62" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA62" ColumnName="SecondaryDiagnosisPOA62" />
+                <ScalarProperty Name="SecondaryDiagnosis63" ColumnName="SecondaryDiagnosis63" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA63" ColumnName="SecondaryDiagnosisPOA63" />
+                <ScalarProperty Name="SecondaryDiagnosis64" ColumnName="SecondaryDiagnosis64" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA64" ColumnName="SecondaryDiagnosisPOA64" />
+                <ScalarProperty Name="SecondaryDiagnosis65" ColumnName="SecondaryDiagnosis65" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA65" ColumnName="SecondaryDiagnosisPOA65" />
+                <ScalarProperty Name="SecondaryDiagnosis66" ColumnName="SecondaryDiagnosis66" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA66" ColumnName="SecondaryDiagnosisPOA66" />
+                <ScalarProperty Name="SecondaryDiagnosis67" ColumnName="SecondaryDiagnosis67" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA67" ColumnName="SecondaryDiagnosisPOA67" />
+                <ScalarProperty Name="SecondaryDiagnosis68" ColumnName="SecondaryDiagnosis68" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA68" ColumnName="SecondaryDiagnosisPOA68" />
+                <ScalarProperty Name="SecondaryDiagnosis69" ColumnName="SecondaryDiagnosis69" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA69" ColumnName="SecondaryDiagnosisPOA69" />
+                <ScalarProperty Name="SecondaryDiagnosis70" ColumnName="SecondaryDiagnosis70" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA70" ColumnName="SecondaryDiagnosisPOA70" />
+                <ScalarProperty Name="SecondaryDiagnosis71" ColumnName="SecondaryDiagnosis71" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA71" ColumnName="SecondaryDiagnosisPOA71" />
+                <ScalarProperty Name="SecondaryDiagnosis72" ColumnName="SecondaryDiagnosis72" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA72" ColumnName="SecondaryDiagnosisPOA72" />
+                <ScalarProperty Name="SecondaryDiagnosis73" ColumnName="SecondaryDiagnosis73" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA73" ColumnName="SecondaryDiagnosisPOA73" />
+                <ScalarProperty Name="SecondaryDiagnosis74" ColumnName="SecondaryDiagnosis74" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA74" ColumnName="SecondaryDiagnosisPOA74" />
+                <ScalarProperty Name="SecondaryDiagnosis75" ColumnName="SecondaryDiagnosis75" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA75" ColumnName="SecondaryDiagnosisPOA75" />
+                <ScalarProperty Name="SecondaryDiagnosis76" ColumnName="SecondaryDiagnosis76" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA76" ColumnName="SecondaryDiagnosisPOA76" />
+                <ScalarProperty Name="SecondaryDiagnosis77" ColumnName="SecondaryDiagnosis77" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA77" ColumnName="SecondaryDiagnosisPOA77" />
+                <ScalarProperty Name="SecondaryDiagnosis78" ColumnName="SecondaryDiagnosis78" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA78" ColumnName="SecondaryDiagnosisPOA78" />
+                <ScalarProperty Name="SecondaryDiagnosis79" ColumnName="SecondaryDiagnosis79" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA79" ColumnName="SecondaryDiagnosisPOA79" />
+                <ScalarProperty Name="SecondaryDiagnosis80" ColumnName="SecondaryDiagnosis80" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA80" ColumnName="SecondaryDiagnosisPOA80" />
+                <ScalarProperty Name="SecondaryDiagnosis81" ColumnName="SecondaryDiagnosis81" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA81" ColumnName="SecondaryDiagnosisPOA81" />
+                <ScalarProperty Name="SecondaryDiagnosis82" ColumnName="SecondaryDiagnosis82" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA82" ColumnName="SecondaryDiagnosisPOA82" />
+                <ScalarProperty Name="SecondaryDiagnosis83" ColumnName="SecondaryDiagnosis83" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA83" ColumnName="SecondaryDiagnosisPOA83" />
+                <ScalarProperty Name="SecondaryDiagnosis84" ColumnName="SecondaryDiagnosis84" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA84" ColumnName="SecondaryDiagnosisPOA84" />
+                <ScalarProperty Name="SecondaryDiagnosis85" ColumnName="SecondaryDiagnosis85" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA85" ColumnName="SecondaryDiagnosisPOA85" />
+                <ScalarProperty Name="SecondaryDiagnosis86" ColumnName="SecondaryDiagnosis86" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA86" ColumnName="SecondaryDiagnosisPOA86" />
+                <ScalarProperty Name="SecondaryDiagnosis87" ColumnName="SecondaryDiagnosis87" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA87" ColumnName="SecondaryDiagnosisPOA87" />
+                <ScalarProperty Name="SecondaryDiagnosis88" ColumnName="SecondaryDiagnosis88" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA88" ColumnName="SecondaryDiagnosisPOA88" />
+                <ScalarProperty Name="SecondaryDiagnosis89" ColumnName="SecondaryDiagnosis89" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA89" ColumnName="SecondaryDiagnosisPOA89" />
+                <ScalarProperty Name="SecondaryDiagnosis90" ColumnName="SecondaryDiagnosis90" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA90" ColumnName="SecondaryDiagnosisPOA90" />
+                <ScalarProperty Name="SecondaryDiagnosis91" ColumnName="SecondaryDiagnosis91" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA91" ColumnName="SecondaryDiagnosisPOA91" />
+                <ScalarProperty Name="SecondaryDiagnosis92" ColumnName="SecondaryDiagnosis92" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA92" ColumnName="SecondaryDiagnosisPOA92" />
+                <ScalarProperty Name="SecondaryDiagnosis93" ColumnName="SecondaryDiagnosis93" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA93" ColumnName="SecondaryDiagnosisPOA93" />
+                <ScalarProperty Name="SecondaryDiagnosis94" ColumnName="SecondaryDiagnosis94" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA94" ColumnName="SecondaryDiagnosisPOA94" />
+                <ScalarProperty Name="SecondaryDiagnosis95" ColumnName="SecondaryDiagnosis95" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA95" ColumnName="SecondaryDiagnosisPOA95" />
+                <ScalarProperty Name="SecondaryDiagnosis96" ColumnName="SecondaryDiagnosis96" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA96" ColumnName="SecondaryDiagnosisPOA96" />
+                <ScalarProperty Name="SecondaryDiagnosis97" ColumnName="SecondaryDiagnosis97" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA97" ColumnName="SecondaryDiagnosisPOA97" />
+                <ScalarProperty Name="SecondaryDiagnosis98" ColumnName="SecondaryDiagnosis98" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA98" ColumnName="SecondaryDiagnosisPOA98" />
+                <ScalarProperty Name="SecondaryDiagnosis99" ColumnName="SecondaryDiagnosis99" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA99" ColumnName="SecondaryDiagnosisPOA99" />
+                <ScalarProperty Name="SecondaryProcedure1" ColumnName="SecondaryProcedure1" />
+                <ScalarProperty Name="SecondaryProcedureDate1" ColumnName="SecondaryProcedureDate1" />
+                <ScalarProperty Name="SecondaryProcedure2" ColumnName="SecondaryProcedure2" />
+                <ScalarProperty Name="SecondaryProcedureDate2" ColumnName="SecondaryProcedureDate2" />
+                <ScalarProperty Name="SecondaryProcedure3" ColumnName="SecondaryProcedure3" />
+                <ScalarProperty Name="SecondaryProcedureDate3" ColumnName="SecondaryProcedureDate3" />
+                <ScalarProperty Name="SecondaryProcedure4" ColumnName="SecondaryProcedure4" />
+                <ScalarProperty Name="SecondaryProcedureDate4" ColumnName="SecondaryProcedureDate4" />
+                <ScalarProperty Name="SecondaryProcedure5" ColumnName="SecondaryProcedure5" />
+                <ScalarProperty Name="SecondaryProcedureDate5" ColumnName="SecondaryProcedureDate5" />
+                <ScalarProperty Name="SecondaryProcedure6" ColumnName="SecondaryProcedure6" />
+                <ScalarProperty Name="SecondaryProcedureDate6" ColumnName="SecondaryProcedureDate6" />
+                <ScalarProperty Name="SecondaryProcedure7" ColumnName="SecondaryProcedure7" />
+                <ScalarProperty Name="SecondaryProcedureDate7" ColumnName="SecondaryProcedureDate7" />
+                <ScalarProperty Name="SecondaryProcedure8" ColumnName="SecondaryProcedure8" />
+                <ScalarProperty Name="SecondaryProcedureDate8" ColumnName="SecondaryProcedureDate8" />
+                <ScalarProperty Name="SecondaryProcedure9" ColumnName="SecondaryProcedure9" />
+                <ScalarProperty Name="SecondaryProcedureDate9" ColumnName="SecondaryProcedureDate9" />
+                <ScalarProperty Name="SecondaryProcedure10" ColumnName="SecondaryProcedure10" />
+                <ScalarProperty Name="SecondaryProcedureDate10" ColumnName="SecondaryProcedureDate10" />
+                <ScalarProperty Name="SecondaryProcedure11" ColumnName="SecondaryProcedure11" />
+                <ScalarProperty Name="SecondaryProcedureDate11" ColumnName="SecondaryProcedureDate11" />
+                <ScalarProperty Name="SecondaryProcedure12" ColumnName="SecondaryProcedure12" />
+                <ScalarProperty Name="SecondaryProcedureDate12" ColumnName="SecondaryProcedureDate12" />
+                <ScalarProperty Name="SecondaryProcedure13" ColumnName="SecondaryProcedure13" />
+                <ScalarProperty Name="SecondaryProcedureDate13" ColumnName="SecondaryProcedureDate13" />
+                <ScalarProperty Name="SecondaryProcedure14" ColumnName="SecondaryProcedure14" />
+                <ScalarProperty Name="SecondaryProcedureDate14" ColumnName="SecondaryProcedureDate14" />
+                <ScalarProperty Name="SecondaryProcedure15" ColumnName="SecondaryProcedure15" />
+                <ScalarProperty Name="SecondaryProcedureDate15" ColumnName="SecondaryProcedureDate15" />
+                <ScalarProperty Name="SecondaryProcedure16" ColumnName="SecondaryProcedure16" />
+                <ScalarProperty Name="SecondaryProcedureDate16" ColumnName="SecondaryProcedureDate16" />
+                <ScalarProperty Name="SecondaryProcedure17" ColumnName="SecondaryProcedure17" />
+                <ScalarProperty Name="SecondaryProcedureDate17" ColumnName="SecondaryProcedureDate17" />
+                <ScalarProperty Name="SecondaryProcedure18" ColumnName="SecondaryProcedure18" />
+                <ScalarProperty Name="SecondaryProcedureDate18" ColumnName="SecondaryProcedureDate18" />
+                <ScalarProperty Name="SecondaryProcedure19" ColumnName="SecondaryProcedure19" />
+                <ScalarProperty Name="SecondaryProcedureDate19" ColumnName="SecondaryProcedureDate19" />
+                <ScalarProperty Name="SecondaryProcedure20" ColumnName="SecondaryProcedure20" />
+                <ScalarProperty Name="SecondaryProcedureDate20" ColumnName="SecondaryProcedureDate20" />
+                <ScalarProperty Name="SecondaryProcedure21" ColumnName="SecondaryProcedure21" />
+                <ScalarProperty Name="SecondaryProcedureDate21" ColumnName="SecondaryProcedureDate21" />
+                <ScalarProperty Name="SecondaryProcedure22" ColumnName="SecondaryProcedure22" />
+                <ScalarProperty Name="SecondaryProcedureDate22" ColumnName="SecondaryProcedureDate22" />
+                <ScalarProperty Name="SecondaryProcedure23" ColumnName="SecondaryProcedure23" />
+                <ScalarProperty Name="SecondaryProcedureDate23" ColumnName="SecondaryProcedureDate23" />
+                <ScalarProperty Name="SecondaryProcedure24" ColumnName="SecondaryProcedure24" />
+                <ScalarProperty Name="SecondaryProcedureDate24" ColumnName="SecondaryProcedureDate24" />
+                <ScalarProperty Name="SecondaryProcedure25" ColumnName="SecondaryProcedure25" />
+                <ScalarProperty Name="SecondaryProcedureDate25" ColumnName="SecondaryProcedureDate25" />
+                <ScalarProperty Name="SecondaryProcedure26" ColumnName="SecondaryProcedure26" />
+                <ScalarProperty Name="SecondaryProcedureDate26" ColumnName="SecondaryProcedureDate26" />
+                <ScalarProperty Name="SecondaryProcedure27" ColumnName="SecondaryProcedure27" />
+                <ScalarProperty Name="SecondaryProcedureDate27" ColumnName="SecondaryProcedureDate27" />
+                <ScalarProperty Name="SecondaryProcedure28" ColumnName="SecondaryProcedure28" />
+                <ScalarProperty Name="SecondaryProcedureDate28" ColumnName="SecondaryProcedureDate28" />
+                <ScalarProperty Name="SecondaryProcedure29" ColumnName="SecondaryProcedure29" />
+                <ScalarProperty Name="SecondaryProcedureDate29" ColumnName="SecondaryProcedureDate29" />
+                <ScalarProperty Name="SecondaryProcedure30" ColumnName="SecondaryProcedure30" />
+                <ScalarProperty Name="SecondaryProcedureDate30" ColumnName="SecondaryProcedureDate30" />
+                <ScalarProperty Name="SecondaryProcedure31" ColumnName="SecondaryProcedure31" />
+                <ScalarProperty Name="SecondaryProcedureDate31" ColumnName="SecondaryProcedureDate31" />
+                <ScalarProperty Name="SecondaryProcedure32" ColumnName="SecondaryProcedure32" />
+                <ScalarProperty Name="SecondaryProcedureDate32" ColumnName="SecondaryProcedureDate32" />
+                <ScalarProperty Name="SecondaryProcedure33" ColumnName="SecondaryProcedure33" />
+                <ScalarProperty Name="SecondaryProcedureDate33" ColumnName="SecondaryProcedureDate33" />
+                <ScalarProperty Name="SecondaryProcedure34" ColumnName="SecondaryProcedure34" />
+                <ScalarProperty Name="SecondaryProcedureDate34" ColumnName="SecondaryProcedureDate34" />
+                <ScalarProperty Name="SecondaryProcedure35" ColumnName="SecondaryProcedure35" />
+                <ScalarProperty Name="SecondaryProcedureDate35" ColumnName="SecondaryProcedureDate35" />
+                <ScalarProperty Name="SecondaryProcedure36" ColumnName="SecondaryProcedure36" />
+                <ScalarProperty Name="SecondaryProcedureDate36" ColumnName="SecondaryProcedureDate36" />
+                <ScalarProperty Name="SecondaryProcedure37" ColumnName="SecondaryProcedure37" />
+                <ScalarProperty Name="SecondaryProcedureDate37" ColumnName="SecondaryProcedureDate37" />
+                <ScalarProperty Name="SecondaryProcedure38" ColumnName="SecondaryProcedure38" />
+                <ScalarProperty Name="SecondaryProcedureDate38" ColumnName="SecondaryProcedureDate38" />
+                <ScalarProperty Name="SecondaryProcedure39" ColumnName="SecondaryProcedure39" />
+                <ScalarProperty Name="SecondaryProcedureDate39" ColumnName="SecondaryProcedureDate39" />
+                <ScalarProperty Name="SecondaryProcedure40" ColumnName="SecondaryProcedure40" />
+                <ScalarProperty Name="SecondaryProcedureDate40" ColumnName="SecondaryProcedureDate40" />
+                <ScalarProperty Name="SecondaryProcedure41" ColumnName="SecondaryProcedure41" />
+                <ScalarProperty Name="SecondaryProcedureDate41" ColumnName="SecondaryProcedureDate41" />
+                <ScalarProperty Name="SecondaryProcedure42" ColumnName="SecondaryProcedure42" />
+                <ScalarProperty Name="SecondaryProcedureDate42" ColumnName="SecondaryProcedureDate42" />
+                <ScalarProperty Name="SecondaryProcedure43" ColumnName="SecondaryProcedure43" />
+                <ScalarProperty Name="SecondaryProcedureDate43" ColumnName="SecondaryProcedureDate43" />
+                <ScalarProperty Name="SecondaryProcedure44" ColumnName="SecondaryProcedure44" />
+                <ScalarProperty Name="SecondaryProcedureDate44" ColumnName="SecondaryProcedureDate44" />
+                <ScalarProperty Name="SecondaryProcedure45" ColumnName="SecondaryProcedure45" />
+                <ScalarProperty Name="SecondaryProcedureDate45" ColumnName="SecondaryProcedureDate45" />
+                <ScalarProperty Name="SecondaryProcedure46" ColumnName="SecondaryProcedure46" />
+                <ScalarProperty Name="SecondaryProcedureDate46" ColumnName="SecondaryProcedureDate46" />
+                <ScalarProperty Name="SecondaryProcedure47" ColumnName="SecondaryProcedure47" />
+                <ScalarProperty Name="SecondaryProcedureDate47" ColumnName="SecondaryProcedureDate47" />
+                <ScalarProperty Name="SecondaryProcedure48" ColumnName="SecondaryProcedure48" />
+                <ScalarProperty Name="SecondaryProcedureDate48" ColumnName="SecondaryProcedureDate48" />
+                <ScalarProperty Name="SecondaryProcedure49" ColumnName="SecondaryProcedure49" />
+                <ScalarProperty Name="SecondaryProcedureDate49" ColumnName="SecondaryProcedureDate49" />
+                <ScalarProperty Name="SecondaryProcedure50" ColumnName="SecondaryProcedure50" />
+                <ScalarProperty Name="SecondaryProcedureDate50" ColumnName="SecondaryProcedureDate50" />
+                <ScalarProperty Name="SecondaryProcedure51" ColumnName="SecondaryProcedure51" />
+                <ScalarProperty Name="SecondaryProcedureDate51" ColumnName="SecondaryProcedureDate51" />
+                <ScalarProperty Name="SecondaryProcedure52" ColumnName="SecondaryProcedure52" />
+                <ScalarProperty Name="SecondaryProcedureDate52" ColumnName="SecondaryProcedureDate52" />
+                <ScalarProperty Name="SecondaryProcedure53" ColumnName="SecondaryProcedure53" />
+                <ScalarProperty Name="SecondaryProcedureDate53" ColumnName="SecondaryProcedureDate53" />
+                <ScalarProperty Name="SecondaryProcedure54" ColumnName="SecondaryProcedure54" />
+                <ScalarProperty Name="SecondaryProcedureDate54" ColumnName="SecondaryProcedureDate54" />
+                <ScalarProperty Name="SecondaryProcedure55" ColumnName="SecondaryProcedure55" />
+                <ScalarProperty Name="SecondaryProcedureDate55" ColumnName="SecondaryProcedureDate55" />
+                <ScalarProperty Name="SecondaryProcedure56" ColumnName="SecondaryProcedure56" />
+                <ScalarProperty Name="SecondaryProcedureDate56" ColumnName="SecondaryProcedureDate56" />
+                <ScalarProperty Name="SecondaryProcedure57" ColumnName="SecondaryProcedure57" />
+                <ScalarProperty Name="SecondaryProcedureDate57" ColumnName="SecondaryProcedureDate57" />
+                <ScalarProperty Name="SecondaryProcedure58" ColumnName="SecondaryProcedure58" />
+                <ScalarProperty Name="SecondaryProcedureDate58" ColumnName="SecondaryProcedureDate58" />
+                <ScalarProperty Name="SecondaryProcedure59" ColumnName="SecondaryProcedure59" />
+                <ScalarProperty Name="SecondaryProcedureDate59" ColumnName="SecondaryProcedureDate59" />
+                <ScalarProperty Name="SecondaryProcedure60" ColumnName="SecondaryProcedure60" />
+                <ScalarProperty Name="SecondaryProcedureDate60" ColumnName="SecondaryProcedureDate60" />
+                <ScalarProperty Name="SecondaryProcedure61" ColumnName="SecondaryProcedure61" />
+                <ScalarProperty Name="SecondaryProcedureDate61" ColumnName="SecondaryProcedureDate61" />
+                <ScalarProperty Name="SecondaryProcedure62" ColumnName="SecondaryProcedure62" />
+                <ScalarProperty Name="SecondaryProcedureDate62" ColumnName="SecondaryProcedureDate62" />
+                <ScalarProperty Name="SecondaryProcedure63" ColumnName="SecondaryProcedure63" />
+                <ScalarProperty Name="SecondaryProcedureDate63" ColumnName="SecondaryProcedureDate63" />
+                <ScalarProperty Name="SecondaryProcedure64" ColumnName="SecondaryProcedure64" />
+                <ScalarProperty Name="SecondaryProcedureDate64" ColumnName="SecondaryProcedureDate64" />
+                <ScalarProperty Name="SecondaryProcedure65" ColumnName="SecondaryProcedure65" />
+                <ScalarProperty Name="SecondaryProcedureDate65" ColumnName="SecondaryProcedureDate65" />
+                <ScalarProperty Name="SecondaryProcedure66" ColumnName="SecondaryProcedure66" />
+                <ScalarProperty Name="SecondaryProcedureDate66" ColumnName="SecondaryProcedureDate66" />
+                <ScalarProperty Name="SecondaryProcedure67" ColumnName="SecondaryProcedure67" />
+                <ScalarProperty Name="SecondaryProcedureDate67" ColumnName="SecondaryProcedureDate67" />
+                <ScalarProperty Name="SecondaryProcedure68" ColumnName="SecondaryProcedure68" />
+                <ScalarProperty Name="SecondaryProcedureDate68" ColumnName="SecondaryProcedureDate68" />
+                <ScalarProperty Name="SecondaryProcedure69" ColumnName="SecondaryProcedure69" />
+                <ScalarProperty Name="SecondaryProcedureDate69" ColumnName="SecondaryProcedureDate69" />
+                <ScalarProperty Name="SecondaryProcedure70" ColumnName="SecondaryProcedure70" />
+                <ScalarProperty Name="SecondaryProcedureDate70" ColumnName="SecondaryProcedureDate70" />
+                <ScalarProperty Name="SecondaryProcedure71" ColumnName="SecondaryProcedure71" />
+                <ScalarProperty Name="SecondaryProcedureDate71" ColumnName="SecondaryProcedureDate71" />
+                <ScalarProperty Name="SecondaryProcedure72" ColumnName="SecondaryProcedure72" />
+                <ScalarProperty Name="SecondaryProcedureDate72" ColumnName="SecondaryProcedureDate72" />
+                <ScalarProperty Name="SecondaryProcedure73" ColumnName="SecondaryProcedure73" />
+                <ScalarProperty Name="SecondaryProcedureDate73" ColumnName="SecondaryProcedureDate73" />
+                <ScalarProperty Name="SecondaryProcedure74" ColumnName="SecondaryProcedure74" />
+                <ScalarProperty Name="SecondaryProcedureDate74" ColumnName="SecondaryProcedureDate74" />
+                <ScalarProperty Name="SecondaryProcedure75" ColumnName="SecondaryProcedure75" />
+                <ScalarProperty Name="SecondaryProcedureDate75" ColumnName="SecondaryProcedureDate75" />
+                <ScalarProperty Name="SecondaryProcedure76" ColumnName="SecondaryProcedure76" />
+                <ScalarProperty Name="SecondaryProcedureDate76" ColumnName="SecondaryProcedureDate76" />
+                <ScalarProperty Name="SecondaryProcedure77" ColumnName="SecondaryProcedure77" />
+                <ScalarProperty Name="SecondaryProcedureDate77" ColumnName="SecondaryProcedureDate77" />
+                <ScalarProperty Name="SecondaryProcedure78" ColumnName="SecondaryProcedure78" />
+                <ScalarProperty Name="SecondaryProcedureDate78" ColumnName="SecondaryProcedureDate78" />
+                <ScalarProperty Name="SecondaryProcedure79" ColumnName="SecondaryProcedure79" />
+                <ScalarProperty Name="SecondaryProcedureDate79" ColumnName="SecondaryProcedureDate79" />
+                <ScalarProperty Name="SecondaryProcedure80" ColumnName="SecondaryProcedure80" />
+                <ScalarProperty Name="SecondaryProcedureDate80" ColumnName="SecondaryProcedureDate80" />
+                <ScalarProperty Name="SecondaryProcedure81" ColumnName="SecondaryProcedure81" />
+                <ScalarProperty Name="SecondaryProcedureDate81" ColumnName="SecondaryProcedureDate81" />
+                <ScalarProperty Name="SecondaryProcedure82" ColumnName="SecondaryProcedure82" />
+                <ScalarProperty Name="SecondaryProcedureDate82" ColumnName="SecondaryProcedureDate82" />
+                <ScalarProperty Name="SecondaryProcedure83" ColumnName="SecondaryProcedure83" />
+                <ScalarProperty Name="SecondaryProcedureDate83" ColumnName="SecondaryProcedureDate83" />
+                <ScalarProperty Name="SecondaryProcedure84" ColumnName="SecondaryProcedure84" />
+                <ScalarProperty Name="SecondaryProcedureDate84" ColumnName="SecondaryProcedureDate84" />
+                <ScalarProperty Name="SecondaryProcedure85" ColumnName="SecondaryProcedure85" />
+                <ScalarProperty Name="SecondaryProcedureDate85" ColumnName="SecondaryProcedureDate85" />
+                <ScalarProperty Name="SecondaryProcedure86" ColumnName="SecondaryProcedure86" />
+                <ScalarProperty Name="SecondaryProcedureDate86" ColumnName="SecondaryProcedureDate86" />
+                <ScalarProperty Name="SecondaryProcedure87" ColumnName="SecondaryProcedure87" />
+                <ScalarProperty Name="SecondaryProcedureDate87" ColumnName="SecondaryProcedureDate87" />
+                <ScalarProperty Name="SecondaryProcedure88" ColumnName="SecondaryProcedure88" />
+                <ScalarProperty Name="SecondaryProcedureDate88" ColumnName="SecondaryProcedureDate88" />
+                <ScalarProperty Name="SecondaryProcedure89" ColumnName="SecondaryProcedure89" />
+                <ScalarProperty Name="SecondaryProcedureDate89" ColumnName="SecondaryProcedureDate89" />
+                <ScalarProperty Name="SecondaryProcedure90" ColumnName="SecondaryProcedure90" />
+                <ScalarProperty Name="SecondaryProcedureDate90" ColumnName="SecondaryProcedureDate90" />
+                <ScalarProperty Name="SecondaryProcedure91" ColumnName="SecondaryProcedure91" />
+                <ScalarProperty Name="SecondaryProcedureDate91" ColumnName="SecondaryProcedureDate91" />
+                <ScalarProperty Name="SecondaryProcedure92" ColumnName="SecondaryProcedure92" />
+                <ScalarProperty Name="SecondaryProcedureDate92" ColumnName="SecondaryProcedureDate92" />
+                <ScalarProperty Name="SecondaryProcedure93" ColumnName="SecondaryProcedure93" />
+                <ScalarProperty Name="SecondaryProcedureDate93" ColumnName="SecondaryProcedureDate93" />
+                <ScalarProperty Name="SecondaryProcedure94" ColumnName="SecondaryProcedure94" />
+                <ScalarProperty Name="SecondaryProcedureDate94" ColumnName="SecondaryProcedureDate94" />
+                <ScalarProperty Name="SecondaryProcedure95" ColumnName="SecondaryProcedure95" />
+                <ScalarProperty Name="SecondaryProcedureDate95" ColumnName="SecondaryProcedureDate95" />
+                <ScalarProperty Name="SecondaryProcedure96" ColumnName="SecondaryProcedure96" />
+                <ScalarProperty Name="SecondaryProcedureDate96" ColumnName="SecondaryProcedureDate96" />
+                <ScalarProperty Name="SecondaryProcedure97" ColumnName="SecondaryProcedure97" />
+                <ScalarProperty Name="SecondaryProcedureDate97" ColumnName="SecondaryProcedureDate97" />
+                <ScalarProperty Name="SecondaryProcedure98" ColumnName="SecondaryProcedure98" />
+                <ScalarProperty Name="SecondaryProcedureDate98" ColumnName="SecondaryProcedureDate98" />
+                <ScalarProperty Name="SecondaryProcedure99" ColumnName="SecondaryProcedure99" />
+                <ScalarProperty Name="SecondaryProcedureDate99" ColumnName="SecondaryProcedureDate99" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetOutpatientData" FunctionName="ClientDB_237006Model.Store.GetOutpatientData">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ClientDB_237006Model.GetOutpatientData_Result">
+                <ScalarProperty Name="EnterpriseName" ColumnName="EnterpriseName" />
+                <ScalarProperty Name="EnterpriseID" ColumnName="EnterpriseID" />
+                <ScalarProperty Name="ExportQueueKey" ColumnName="ExportQueueKey" />
+                <ScalarProperty Name="EventTypeKey" ColumnName="EventTypeKey" />
+                <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+                <ScalarProperty Name="CodeSetKey" ColumnName="CodeSetKey" />
+                <ScalarProperty Name="VisitKey" ColumnName="VisitKey" />
+                <ScalarProperty Name="FacilityName" ColumnName="FacilityName" />
+                <ScalarProperty Name="WorkingOrFinal" ColumnName="WorkingOrFinal" />
+                <ScalarProperty Name="PatientClassifications3M" ColumnName="PatientClassifications3M" />
+                <ScalarProperty Name="PatientType" ColumnName="PatientType" />
+                <ScalarProperty Name="PatientTypeDescription" ColumnName="PatientTypeDescription" />
+                <ScalarProperty Name="VisitType" ColumnName="VisitType" />
+                <ScalarProperty Name="VisitTypeDescription" ColumnName="VisitTypeDescription" />
+                <ScalarProperty Name="PatientLastName" ColumnName="PatientLastName" />
+                <ScalarProperty Name="PatientFirstName" ColumnName="PatientFirstName" />
+                <ScalarProperty Name="PatientMiddleName" ColumnName="PatientMiddleName" />
+                <ScalarProperty Name="PatientAlias" ColumnName="PatientAlias" />
+                <ScalarProperty Name="StreetAddress1" ColumnName="StreetAddress1" />
+                <ScalarProperty Name="StreetAddress2" ColumnName="StreetAddress2" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="County" ColumnName="County" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="BirthDateTime" ColumnName="BirthDateTime" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+                <ScalarProperty Name="Race" ColumnName="Race" />
+                <ScalarProperty Name="RaceDescription" ColumnName="RaceDescription" />
+                <ScalarProperty Name="Ethnicity" ColumnName="Ethnicity" />
+                <ScalarProperty Name="EthnicityDescription" ColumnName="EthnicityDescription" />
+                <ScalarProperty Name="SSN" ColumnName="SSN" />
+                <ScalarProperty Name="CitizenshipStatus" ColumnName="CitizenshipStatus" />
+                <ScalarProperty Name="MilitaryStatus" ColumnName="MilitaryStatus" />
+                <ScalarProperty Name="DriversLicenseNumber" ColumnName="DriversLicenseNumber" />
+                <ScalarProperty Name="ProviderId" ColumnName="ProviderId" />
+                <ScalarProperty Name="ProviderNumber" ColumnName="ProviderNumber" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="MRN" ColumnName="MRN" />
+                <ScalarProperty Name="ClaimID" ColumnName="ClaimID" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="TypeOfAdmission" ColumnName="TypeOfAdmission" />
+                <ScalarProperty Name="AdmissionTypeDescription" ColumnName="AdmissionTypeDescription" />
+                <ScalarProperty Name="AgeInDays" ColumnName="AgeInDays" />
+                <ScalarProperty Name="AgeInYears" ColumnName="AgeInYears" />
+                <ScalarProperty Name="IcdVersionQualifier" ColumnName="IcdVersionQualifier" />
+                <ScalarProperty Name="ReasonForVisitDiagnosis1" ColumnName="ReasonForVisitDiagnosis1" />
+                <ScalarProperty Name="ReasonForVisitDiagnosis2" ColumnName="ReasonForVisitDiagnosis2" />
+                <ScalarProperty Name="ReasonForVisitDiagnosis3" ColumnName="ReasonForVisitDiagnosis3" />
+                <ScalarProperty Name="AdmitDiagnosis" ColumnName="AdmitDiagnosis" />
+                <ScalarProperty Name="PrincipalDiagnosis" ColumnName="PrincipalDiagnosis" />
+                <ScalarProperty Name="PrincipalDiagnosisPOA" ColumnName="PrincipalDiagnosisPOA" />
+                <ScalarProperty Name="DischargeDate" ColumnName="DischargeDate" />
+                <ScalarProperty Name="DischargeStatus" ColumnName="DischargeStatus" />
+                <ScalarProperty Name="DischargeStatusLocal" ColumnName="DischargeStatusLocal" />
+                <ScalarProperty Name="PrimaryPayer" ColumnName="PrimaryPayer" />
+                <ScalarProperty Name="SecondaryPayer" ColumnName="SecondaryPayer" />
+                <ScalarProperty Name="TertiaryPayer" ColumnName="TertiaryPayer" />
+                <ScalarProperty Name="FinancialClass" ColumnName="FinancialClass" />
+                <ScalarProperty Name="AttendingNPI" ColumnName="AttendingNPI" />
+                <ScalarProperty Name="AttendingName" ColumnName="AttendingName" />
+                <ScalarProperty Name="AttendingDepartment" ColumnName="AttendingDepartment" />
+                <ScalarProperty Name="OperatingNPI" ColumnName="OperatingNPI" />
+                <ScalarProperty Name="OperatingName" ColumnName="OperatingName" />
+                <ScalarProperty Name="OperatingDepartment" ColumnName="OperatingDepartment" />
+                <ScalarProperty Name="ReferringNPI" ColumnName="ReferringNPI" />
+                <ScalarProperty Name="ReferringName" ColumnName="ReferringName" />
+                <ScalarProperty Name="ReferringDepartment" ColumnName="ReferringDepartment" />
+                <ScalarProperty Name="RenderingNPI" ColumnName="RenderingNPI" />
+                <ScalarProperty Name="RenderingName" ColumnName="RenderingName" />
+                <ScalarProperty Name="RenderingDepartment" ColumnName="RenderingDepartment" />
+                <ScalarProperty Name="GrouperType" ColumnName="GrouperType" />
+                <ScalarProperty Name="GrouperVersion" ColumnName="GrouperVersion" />
+                <ScalarProperty Name="TotalCharges" ColumnName="TotalCharges" />
+                <ScalarProperty Name="TotalNonCharges" ColumnName="TotalNonCharges" />
+                <ScalarProperty Name="TypeOfBill" ColumnName="TypeOfBill" />
+                <ScalarProperty Name="DeathDate" ColumnName="DeathDate" />
+                <ScalarProperty Name="ConditionCode1" ColumnName="ConditionCode1" />
+                <ScalarProperty Name="ConditionCode2" ColumnName="ConditionCode2" />
+                <ScalarProperty Name="ConditionCode3" ColumnName="ConditionCode3" />
+                <ScalarProperty Name="ConditionCode4" ColumnName="ConditionCode4" />
+                <ScalarProperty Name="ConditionCode5" ColumnName="ConditionCode5" />
+                <ScalarProperty Name="ConditionCode6" ColumnName="ConditionCode6" />
+                <ScalarProperty Name="ConditionCode7" ColumnName="ConditionCode7" />
+                <ScalarProperty Name="ConditionCode8" ColumnName="ConditionCode8" />
+                <ScalarProperty Name="ConditionCode9" ColumnName="ConditionCode9" />
+                <ScalarProperty Name="ConditionCode10" ColumnName="ConditionCode10" />
+                <ScalarProperty Name="ConditionCode11" ColumnName="ConditionCode11" />
+                <ScalarProperty Name="OccurrenceCode1" ColumnName="OccurrenceCode1" />
+                <ScalarProperty Name="OccurrenceCodeDate1" ColumnName="OccurrenceCodeDate1" />
+                <ScalarProperty Name="OccurrenceCode2" ColumnName="OccurrenceCode2" />
+                <ScalarProperty Name="OccurrenceCodeDate2" ColumnName="OccurrenceCodeDate2" />
+                <ScalarProperty Name="OccurrenceCode3" ColumnName="OccurrenceCode3" />
+                <ScalarProperty Name="OccurrenceCodeDate3" ColumnName="OccurrenceCodeDate3" />
+                <ScalarProperty Name="OccurrenceCode4" ColumnName="OccurrenceCode4" />
+                <ScalarProperty Name="OccurrenceCodeDate4" ColumnName="OccurrenceCodeDate4" />
+                <ScalarProperty Name="OccurrenceCode5" ColumnName="OccurrenceCode5" />
+                <ScalarProperty Name="OccurrenceCodeDate5" ColumnName="OccurrenceCodeDate5" />
+                <ScalarProperty Name="OccurrenceCode6" ColumnName="OccurrenceCode6" />
+                <ScalarProperty Name="OccurrenceCodeDate6" ColumnName="OccurrenceCodeDate6" />
+                <ScalarProperty Name="OccurrenceCode7" ColumnName="OccurrenceCode7" />
+                <ScalarProperty Name="OccurrenceCodeDate7" ColumnName="OccurrenceCodeDate7" />
+                <ScalarProperty Name="OccurrenceCode8" ColumnName="OccurrenceCode8" />
+                <ScalarProperty Name="OccurrenceCodeDate8" ColumnName="OccurrenceCodeDate8" />
+                <ScalarProperty Name="OccurrenceCode9" ColumnName="OccurrenceCode9" />
+                <ScalarProperty Name="OccurrenceCodeDate9" ColumnName="OccurrenceCodeDate9" />
+                <ScalarProperty Name="OccurrenceCode10" ColumnName="OccurrenceCode10" />
+                <ScalarProperty Name="OccurrenceCodeDate10" ColumnName="OccurrenceCodeDate10" />
+                <ScalarProperty Name="ValueCode1" ColumnName="ValueCode1" />
+                <ScalarProperty Name="ValueCodeAmount1" ColumnName="ValueCodeAmount1" />
+                <ScalarProperty Name="ValueCode2" ColumnName="ValueCode2" />
+                <ScalarProperty Name="ValueCodeAmount2" ColumnName="ValueCodeAmount2" />
+                <ScalarProperty Name="ValueCode3" ColumnName="ValueCode3" />
+                <ScalarProperty Name="ValueCodeAmount3" ColumnName="ValueCodeAmount3" />
+                <ScalarProperty Name="ValueCode4" ColumnName="ValueCode4" />
+                <ScalarProperty Name="ValueCodeAmount4" ColumnName="ValueCodeAmount4" />
+                <ScalarProperty Name="ValueCode5" ColumnName="ValueCode5" />
+                <ScalarProperty Name="ValueCodeAmount5" ColumnName="ValueCodeAmount5" />
+                <ScalarProperty Name="ValueCode6" ColumnName="ValueCode6" />
+                <ScalarProperty Name="ValueCodeAmount6" ColumnName="ValueCodeAmount6" />
+                <ScalarProperty Name="ValueCode7" ColumnName="ValueCode7" />
+                <ScalarProperty Name="ValueCodeAmount7" ColumnName="ValueCodeAmount7" />
+                <ScalarProperty Name="ValueCode8" ColumnName="ValueCode8" />
+                <ScalarProperty Name="ValueCodeAmount8" ColumnName="ValueCodeAmount8" />
+                <ScalarProperty Name="ValueCode9" ColumnName="ValueCode9" />
+                <ScalarProperty Name="ValueCodeAmount9" ColumnName="ValueCodeAmount9" />
+                <ScalarProperty Name="ValueCode10" ColumnName="ValueCode10" />
+                <ScalarProperty Name="ValueCodeAmount10" ColumnName="ValueCodeAmount10" />
+                <ScalarProperty Name="ValueCode11" ColumnName="ValueCode11" />
+                <ScalarProperty Name="ValueCodeAmount11" ColumnName="ValueCodeAmount11" />
+                <ScalarProperty Name="ValueCode12" ColumnName="ValueCode12" />
+                <ScalarProperty Name="ValueCodeAmount12" ColumnName="ValueCodeAmount12" />
+                <ScalarProperty Name="SecondaryDiagnosis1" ColumnName="SecondaryDiagnosis1" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA1" ColumnName="SecondaryDiagnosisPOA1" />
+                <ScalarProperty Name="SecondaryDiagnosis2" ColumnName="SecondaryDiagnosis2" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA2" ColumnName="SecondaryDiagnosisPOA2" />
+                <ScalarProperty Name="SecondaryDiagnosis3" ColumnName="SecondaryDiagnosis3" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA3" ColumnName="SecondaryDiagnosisPOA3" />
+                <ScalarProperty Name="SecondaryDiagnosis4" ColumnName="SecondaryDiagnosis4" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA4" ColumnName="SecondaryDiagnosisPOA4" />
+                <ScalarProperty Name="SecondaryDiagnosis5" ColumnName="SecondaryDiagnosis5" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA5" ColumnName="SecondaryDiagnosisPOA5" />
+                <ScalarProperty Name="SecondaryDiagnosis6" ColumnName="SecondaryDiagnosis6" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA6" ColumnName="SecondaryDiagnosisPOA6" />
+                <ScalarProperty Name="SecondaryDiagnosis7" ColumnName="SecondaryDiagnosis7" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA7" ColumnName="SecondaryDiagnosisPOA7" />
+                <ScalarProperty Name="SecondaryDiagnosis8" ColumnName="SecondaryDiagnosis8" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA8" ColumnName="SecondaryDiagnosisPOA8" />
+                <ScalarProperty Name="SecondaryDiagnosis9" ColumnName="SecondaryDiagnosis9" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA9" ColumnName="SecondaryDiagnosisPOA9" />
+                <ScalarProperty Name="SecondaryDiagnosis10" ColumnName="SecondaryDiagnosis10" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA10" ColumnName="SecondaryDiagnosisPOA10" />
+                <ScalarProperty Name="SecondaryDiagnosis11" ColumnName="SecondaryDiagnosis11" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA11" ColumnName="SecondaryDiagnosisPOA11" />
+                <ScalarProperty Name="SecondaryDiagnosis12" ColumnName="SecondaryDiagnosis12" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA12" ColumnName="SecondaryDiagnosisPOA12" />
+                <ScalarProperty Name="SecondaryDiagnosis13" ColumnName="SecondaryDiagnosis13" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA13" ColumnName="SecondaryDiagnosisPOA13" />
+                <ScalarProperty Name="SecondaryDiagnosis14" ColumnName="SecondaryDiagnosis14" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA14" ColumnName="SecondaryDiagnosisPOA14" />
+                <ScalarProperty Name="SecondaryDiagnosis15" ColumnName="SecondaryDiagnosis15" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA15" ColumnName="SecondaryDiagnosisPOA15" />
+                <ScalarProperty Name="SecondaryDiagnosis16" ColumnName="SecondaryDiagnosis16" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA16" ColumnName="SecondaryDiagnosisPOA16" />
+                <ScalarProperty Name="SecondaryDiagnosis17" ColumnName="SecondaryDiagnosis17" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA17" ColumnName="SecondaryDiagnosisPOA17" />
+                <ScalarProperty Name="SecondaryDiagnosis18" ColumnName="SecondaryDiagnosis18" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA18" ColumnName="SecondaryDiagnosisPOA18" />
+                <ScalarProperty Name="SecondaryDiagnosis19" ColumnName="SecondaryDiagnosis19" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA19" ColumnName="SecondaryDiagnosisPOA19" />
+                <ScalarProperty Name="SecondaryDiagnosis20" ColumnName="SecondaryDiagnosis20" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA20" ColumnName="SecondaryDiagnosisPOA20" />
+                <ScalarProperty Name="SecondaryDiagnosis21" ColumnName="SecondaryDiagnosis21" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA21" ColumnName="SecondaryDiagnosisPOA21" />
+                <ScalarProperty Name="SecondaryDiagnosis22" ColumnName="SecondaryDiagnosis22" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA22" ColumnName="SecondaryDiagnosisPOA22" />
+                <ScalarProperty Name="SecondaryDiagnosis23" ColumnName="SecondaryDiagnosis23" />
+                <ScalarProperty Name="SecondaryDiagnosisPOA23" ColumnName="SecondaryDiagnosisPOA23" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

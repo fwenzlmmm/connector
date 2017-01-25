@@ -19,10 +19,20 @@
     "AWSSDK.Core": "3.3.7.1",
     "AWSSDK.SecurityToken": "3.3.0.8",
     "AWSSDK.S3": "3.3.5.2",
-    "AspNet.Mvc.TypedRouting": "1.1.0"
+    "AspNet.Mvc.TypedRouting": "1.1.0",
+    "Microsoft.EntityFrameworkCore": "1.1.0",
+    "Microsoft.EntityFrameworkCore.Tools": "1.1.0-preview4-final",
+    "Microsoft.AspNetCore.Razor.Tools": "1.1.0-preview4-final",
+    "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.1.0-preview1-final",
+    "Microsoft.AspNetCore.Mvc.Core": "1.1.0",
+    "Microsoft.EntityFrameworkCore.Relational": "1.1.0",
+    "Microsoft.EntityFrameworkCore.SqlServer": "1.1.0"
   },
   "tools": {
-    "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.1.0-preview4-final"
+    "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.1.0-preview4-final",
+    "Microsoft.AspNetCore.Razor.Tools": "1.1.0-preview4-final",
+    "Microsoft.EntityFrameworkCore.Tools": "1.1.0-preview4-final",
+    "Microsoft.EntityFrameworkCore.Tools.DotNet": "1.1.0-preview4"
   },
   "frameworks": {
     "netcoreapp1.1": {
@@ -37,17 +47,18 @@
     "debugType": "portable",
     "preserveCompilationContext": true
   },
-  "runtimeOptions": {
-    "configProperties": {
-      "System.GC.Server": true
-    }
-  },
   "runtimes": {
     "ubuntu.16.04-x64": {},
     "linux-x64": {},
     "win7-x64": {},
     "win7-x86": {}
   },
+  "runtimeOptions": {
+    "configProperties": {
+      "System.GC.Server": true
+    }
+  },
+
   "publishOptions": {
     "include": [
       "wwwroot",

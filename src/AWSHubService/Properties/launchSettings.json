@@ -19,7 +19,7 @@
     "AWSHubService": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "http://W0179776.usac.mmm.com/api/values",
+      "launchUrl": "http://www.3m.hubservices.com:8080/api/Outpatient/237006/01-05-2013/12-05-2013/Final",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

@@ -12,7 +12,9 @@ using AWSHubService.Interfaces;
 using AWSHubService.Models;
 using System.Security.Cryptography.X509Certificates;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Routing;
+using AWSHubService.Data;
 
 namespace AWSHubService
 {
@@ -37,6 +39,8 @@ namespace AWSHubService
             services.AddMvc();
             //services.AddMvc().AddTypedRouting();
             services.AddSingleton<ITodoRepository, TodoRepository>();
+            services.AddDbContext<ClientDBContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             /*
             services.Configure<IISOptions>(options => {
                 options.AutomaticAuthentication = false;
@@ -64,7 +68,14 @@ namespace AWSHubService
             //app.Use(ChangeContextToHttps);
             //app.UseKestrelHttps(certificate);
             //app.UseDeveloperExceptionPage();
-
+            /*
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller}/{action}/{id}");
+            });
+            */
             app.UseMvcWithDefaultRoute();
         }
     }

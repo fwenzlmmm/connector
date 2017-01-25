@@ -15,6 +15,7 @@ using Amazon.Runtime;
 using Amazon.S3;
 using Newtonsoft.Json;
 using Amazon.S3.Transfer;
+using Microsoft.Extensions.Logging;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -23,13 +24,26 @@ namespace AWSHubService.Controllers
     [Route("api/[controller]")]
     public class SecurityController : Controller
     {
-        private readonly IOptions<AppSettings> config;
-        public SecurityController(IOptions<AppSettings> config)
+        private readonly IOptions<AppSettings> _config;
+        private readonly ILogger _logger;
+
+        public IOptions<AppSettings> Config
         {
-            this.config = config;
+            get { return _config;  }
+        }
+        public ILogger Logger
+        {
+            get { return _logger; }
         }
 
-        //[RequireClientCert]
+        public SecurityController(IOptions<AppSettings> config, ILogger<SecurityController> logger)
+        {
+            this._config = config;
+            _logger = logger;
+        }
+
+        //[RequireClientCert(Config, _logger)]
+        [RequireClientCert]
         [HttpGet]
         public Credentials Get()
         {
@@ -63,14 +77,12 @@ namespace AWSHubService.Controllers
 
         private Credentials GetAWSToken()
         {
-            //string jsonCredentials = null;
-            Credentials credentials = null;
-            //SessionAWSCredentials sessionCredentials = null;
+            Amazon.SecurityToken.Model.Credentials credentials = null;
 
-            AmazonSecurityTokenServiceConfig awsConfig = new AmazonSecurityTokenServiceConfig();
-            if (System.IO.File.Exists(config.Value.AWS.ProfilesLocation))
+            Amazon.SecurityToken.AmazonSecurityTokenServiceConfig awsConfig = new AmazonSecurityTokenServiceConfig();
+            if (System.IO.File.Exists(_config.Value.AWS.ProfilesLocation))
             { 
-                string readText = System.IO.File.ReadAllText(config.Value.AWS.ProfilesLocation);
+                string readText = System.IO.File.ReadAllText(_config.Value.AWS.ProfilesLocation);
                 if(!string.IsNullOrWhiteSpace(readText))
                 {
                     readText = readText.Substring(readText.IndexOf('\n') + 1); //skip the first line
@@ -125,6 +137,9 @@ namespace AWSHubService.Controllers
                     */
                 }
             }
+            credentials.AccessKeyId = "YourTemporaryAccessKeyId";
+            credentials.SecretAccessKey = "YourTemporarySecretAccessKey";
+            credentials.SessionToken = "YourTemporarySessionToken";
             return credentials;
         }
     }
