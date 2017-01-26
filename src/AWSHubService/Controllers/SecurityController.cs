@@ -22,27 +22,12 @@ using Microsoft.Extensions.Logging;
 namespace AWSHubService.Controllers
 {
     [Route("api/[controller]")]
-    public class SecurityController : Controller
+    public class SecurityController : BaseController
     {
-        private readonly IOptions<AppSettings> _config;
-        private readonly ILogger _logger;
-
-        public IOptions<AppSettings> Config
+        public SecurityController(IOptions<AppSettings> config, ILogger<SecurityController> logger) : base(config, logger)
         {
-            get { return _config;  }
-        }
-        public ILogger Logger
-        {
-            get { return _logger; }
         }
 
-        public SecurityController(IOptions<AppSettings> config, ILogger<SecurityController> logger)
-        {
-            this._config = config;
-            _logger = logger;
-        }
-
-        //[RequireClientCert(Config, _logger)]
         [RequireClientCert]
         [HttpGet]
         public Credentials Get()
@@ -55,7 +40,6 @@ namespace AWSHubService.Controllers
         {
             return GetAWSToken();
         }
-
 
         // POST api/values
         [HttpPost]
@@ -80,9 +64,9 @@ namespace AWSHubService.Controllers
             Amazon.SecurityToken.Model.Credentials credentials = null;
 
             Amazon.SecurityToken.AmazonSecurityTokenServiceConfig awsConfig = new AmazonSecurityTokenServiceConfig();
-            if (System.IO.File.Exists(_config.Value.AWS.ProfilesLocation))
+            if (System.IO.File.Exists(Config.Value.AWS.ProfilesLocation))
             { 
-                string readText = System.IO.File.ReadAllText(_config.Value.AWS.ProfilesLocation);
+                string readText = System.IO.File.ReadAllText(Config.Value.AWS.ProfilesLocation);
                 if(!string.IsNullOrWhiteSpace(readText))
                 {
                     readText = readText.Substring(readText.IndexOf('\n') + 1); //skip the first line

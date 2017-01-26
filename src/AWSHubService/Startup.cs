@@ -15,6 +15,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Routing;
 using AWSHubService.Data;
+using Microsoft.AspNetCore.Mvc.ApplicationModels;
+using AWSHubService.Controllers;
+using Serilog;
 
 namespace AWSHubService
 {
@@ -27,7 +30,12 @@ namespace AWSHubService
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
+            
             Configuration = builder.Build();
+            Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Debug()
+            .WriteTo.RollingFile("log-{Date}.txt")
+            .CreateLogger();
         }
 
         public IConfigurationRoot Configuration { get; }
@@ -35,12 +43,15 @@ namespace AWSHubService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddLogging();
             // Add framework services.
             services.AddMvc();
-            //services.AddMvc().AddTypedRouting();
             services.AddSingleton<ITodoRepository, TodoRepository>();
+            //add dependancy injection to ApplicationModelProvider to pass Logger and Config objects to RequireClientCert attribute
+            services.AddTransient<IApplicationModelProvider, ApplicationModelProvider>();
             services.AddDbContext<ClientDBContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
             /*
             services.Configure<IISOptions>(options => {
                 options.AutomaticAuthentication = false;
@@ -48,11 +59,11 @@ namespace AWSHubService
                 options.ForwardWindowsAuthentication = false;
             });
             */
-            /*
+
             services.Configure<MvcOptions>(options => {
                 options.Filters.Add(new RequireHttpsAttribute());
             });
-            */
+
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
 
         }
@@ -62,6 +73,7 @@ namespace AWSHubService
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+            loggerFactory.AddSerilog();
 
             app.UseMvc();
 

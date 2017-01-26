@@ -24,9 +24,9 @@ namespace AWSHubClient
         {
             try
             {
-                Task task = SendRequest(ConfigurationManager.AppSettings["URL"]);
-                task.Wait();
-                task = SendRequestUsingClientCertificate(ConfigurationManager.AppSettings["URL"]);
+                //Task task = SendRequest(ConfigurationManager.AppSettings["URL"]);
+                //task.Wait();
+                Task task = SendRequestUsingClientCertificate(ConfigurationManager.AppSettings["URL"]);
                 task.Wait();
             }
             catch (Exception ex)
@@ -106,8 +106,12 @@ namespace AWSHubClient
             try
             {
                 WebRequestHandler handler = new WebRequestHandler();
-                X509Certificate certificate = GetCert();
+                X509Certificate certificate = GetCert(true);
                 handler.ClientCertificates.Add(certificate);
+                /*
+                certificate = GetCert(false);
+                handler.ClientCertificates.Add(certificate);
+                */
                 handler.ServerCertificateValidationCallback = new RemoteCertificateValidationCallback(ValidateServerCertificate);
                 handler.ClientCertificateOptions = ClientCertificateOption.Manual;
                 using (var client = new HttpClient(handler))
@@ -179,13 +183,13 @@ namespace AWSHubClient
             return true;
         }
 
-        public static X509Certificate2 GetCert()
+        public static X509Certificate2 GetCert(bool client)
         {
             X509Store certStore = new X509Store("MY", StoreLocation.LocalMachine);
             certStore.Open(OpenFlags.ReadOnly | OpenFlags.OpenExistingOnly);
 
             X509Certificate2Collection collection = (X509Certificate2Collection)certStore.Certificates;
-            X509Certificate2Collection fcollection = (X509Certificate2Collection)collection.Find(X509FindType.FindByThumbprint, Regex.Replace(ConfigurationManager.AppSettings["ClientCertThumbprint"], @"[^\da-zA-z]", string.Empty).ToUpper(), false);
+            X509Certificate2Collection fcollection = (X509Certificate2Collection)collection.Find(X509FindType.FindByThumbprint, Regex.Replace((client ? ConfigurationManager.AppSettings["ClientCertThumbprint"] : ConfigurationManager.AppSettings["ServerCertThumbprint"]), @"[^\da-zA-z]", string.Empty).ToUpper(), false);
             if (fcollection != null && fcollection.Count > 0)
                 return fcollection[0];
             else

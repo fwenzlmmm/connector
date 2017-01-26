@@ -26,7 +26,9 @@
     "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.1.0-preview1-final",
     "Microsoft.AspNetCore.Mvc.Core": "1.1.0",
     "Microsoft.EntityFrameworkCore.Relational": "1.1.0",
-    "Microsoft.EntityFrameworkCore.SqlServer": "1.1.0"
+    "Microsoft.EntityFrameworkCore.SqlServer": "1.1.0",
+    "Serilog.Extensions.Logging": "1.4.0-dev-10138",
+    "Serilog.Sinks.RollingFile": "3.3.0"
   },
   "tools": {
     "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.1.0-preview4-final",

@@ -11,7 +11,6 @@ namespace AWSHubService.Data
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
             optionsBuilder.UseSqlServer(@"Server=10.104.94.93;Initial Catalog=ClientDB_237006;uid=HSA_DBUSER;pwd=password963.;");
         }
 

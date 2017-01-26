@@ -5,21 +5,18 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Logging;
 using AWSHubService.Data;
 using AWSHubService.Models;
-using Microsoft.Extensions.Options;
 
 namespace AWSHubService.Controllers
 {
     [Route("api/[controller]")]
-    public class InpatientController : Controller
+    public class InpatientController : BaseController
     {
-        private readonly ClientDBContext _context;
-        private readonly IOptions<AppSettings> _config;
-        public InpatientController(IOptions<AppSettings> config, ClientDBContext context)
+        public InpatientController(IOptions<AppSettings> config, ILogger<InpatientController> logger, ClientDBContext context) : base(config, logger, context)
         {
-            _config = config;
-            _context = context;
         }
 
         // GET: Inpatient/Details/5
@@ -29,7 +26,7 @@ namespace AWSHubService.Controllers
             {
                 return null;
             }
-            vwInpatient inpatient = await _context.vwInpatient.SingleOrDefaultAsync(m => m.ExportQueueKey == id);
+            vwInpatient inpatient = await DBContext.vwInpatient.SingleOrDefaultAsync(m => m.ExportQueueKey == id);
             if (inpatient == null)
             {
                 return inpatient;
@@ -45,7 +42,7 @@ namespace AWSHubService.Controllers
             DateTime dateEnd = new DateTime(2013, 12, 31);
             string finalOrWorking = "Final";
 
-            vwInpatient[] inpatients = await _context.vwInpatient.Where(m => Convert.ToDateTime(m.DischargeDate) >= dateStart && Convert.ToDateTime(m.DischargeDate) <= dateEnd && m.WorkingOrFinal == finalOrWorking).ToArrayAsync();
+            vwInpatient[] inpatients = await DBContext.vwInpatient.Where(m => Convert.ToDateTime(m.DischargeDate) >= dateStart && Convert.ToDateTime(m.DischargeDate) <= dateEnd && m.WorkingOrFinal == finalOrWorking).ToArrayAsync();
             return inpatients.ToList();
         }
 
@@ -54,7 +51,7 @@ namespace AWSHubService.Controllers
         // GET: Inpatient/List/5
         public async Task<List<vwInpatient>> List(int enterpriseId, DateTime dateStart, DateTime dateEnd, string finalOrWorking)
         {
-            vwInpatient[] inpatients = await _context.vwInpatient.Where(m => Convert.ToDateTime(m.DischargeDate) >= dateStart && Convert.ToDateTime(m.DischargeDate) <= dateEnd && m.WorkingOrFinal == finalOrWorking).ToArrayAsync();
+            vwInpatient[] inpatients = await DBContext.vwInpatient.Where(m => Convert.ToDateTime(m.DischargeDate) >= dateStart && Convert.ToDateTime(m.DischargeDate) <= dateEnd && m.WorkingOrFinal == finalOrWorking).ToArrayAsync();
             return inpatients.ToList();
         }
     }
