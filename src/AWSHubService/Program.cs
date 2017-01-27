@@ -28,6 +28,7 @@ namespace AWSHubService
                 //string[] baseUrls = new string[] { "http://www.3m.HubServices.Com:8080" };
                 //string[] baseUrls = new string[] { "http://54.85.167.42:8080" };
                 string[] baseUrls = new string[] { "http://10.104.92.89:80", "https://10.104.92.89:443" };
+                //string[] baseUrls = new string[] { "http://10.104.92.89:5000", "https://10.104.92.89:5001" };
                 var host = new WebHostBuilder()
                     
                     .UseKestrel(options =>
