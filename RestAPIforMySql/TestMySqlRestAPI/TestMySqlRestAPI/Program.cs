@@ -119,8 +119,13 @@ namespace PostToMySqlRestAPI
             try
             {
                 WebRequestHandler handler = new WebRequestHandler();
-
-                //handler.Credentials = new System.Net.Credentials
+                if(url.ToLower().Contains("https:"))
+                { 
+                    X509Certificate certificate = GetCert(true);
+                    handler.ClientCertificates.Add(certificate);
+                    handler.ServerCertificateValidationCallback = new RemoteCertificateValidationCallback(ValidateServerCertificate);
+                    handler.ClientCertificateOptions = ClientCertificateOption.Manual;
+                }
                 using (var client = new HttpClient(handler))
                 {
                     StringContent stringContent = null;

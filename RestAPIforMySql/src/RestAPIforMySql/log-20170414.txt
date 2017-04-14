@@ -4083,3 +4083,311 @@ ORDER BY `b`.`Name`
 2017-04-14 08:36:46.213 -04:00 [Debug] Connection id ""0HL435VAF9JI8"" sending FIN.
 2017-04-14 08:36:46.214 -04:00 [Debug] Connection id ""0HL435VAF9JI8"" sent FIN with status "0".
 2017-04-14 08:36:46.214 -04:00 [Debug] Connection id ""0HL435VAF9JI8"" stopped.
+2017-04-14 08:58:13.854 -04:00 [Debug] Hosting shutdown
+2017-04-14 08:58:20.232 -04:00 [Debug] Hosting starting
+2017-04-14 08:58:20.505 -04:00 [Debug] Hosting started
+2017-04-14 08:58:57.879 -04:00 [Debug] Connection id ""0HL436O1Q9I6V"" started.
+2017-04-14 08:58:57.898 -04:00 [Debug] Connection id ""0HL436O1Q9I6V"" received FIN.
+2017-04-14 08:58:57.931 -04:00 [Debug] Connection id ""0HL436O1Q9I6V"" disconnecting.
+2017-04-14 08:58:57.938 -04:00 [Debug] Connection id ""0HL436O1Q9I6V"" sending FIN.
+2017-04-14 08:58:57.945 -04:00 [Debug] Connection id ""0HL436O1Q9I6V"" sent FIN with status "0".
+2017-04-14 08:58:57.948 -04:00 [Debug] Connection id ""0HL436O1Q9I6V"" stopped.
+2017-04-14 08:59:09.776 -04:00 [Debug] Connection id ""0HL436O1Q9I70"" started.
+2017-04-14 08:59:10.583 -04:00 [Debug] Connection id ""0HL436O1Q9I70"" received FIN.
+2017-04-14 08:59:10.586 -04:00 [Debug] Connection id ""0HL436O1Q9I70"" disconnecting.
+2017-04-14 08:59:10.586 -04:00 [Debug] Connection id ""0HL436O1Q9I70"" sending FIN.
+2017-04-14 08:59:10.586 -04:00 [Debug] Connection id ""0HL436O1Q9I70"" sent FIN with status "0".
+2017-04-14 08:59:10.586 -04:00 [Debug] Connection id ""0HL436O1Q9I70"" stopped.
+2017-04-14 09:03:44.782 -04:00 [Debug] Connection id ""0HL436O1Q9I71"" started.
+2017-04-14 09:03:45.167 -04:00 [Information] Request starting HTTP/1.1 GET https://www.3m.hubservices.com:8081/api/definitions  
+2017-04-14 09:03:45.344 -04:00 [Debug] Request successfully matched the route with name 'null' and template '"api/Definitions"'.
+2017-04-14 09:03:45.366 -04:00 [Debug] Action '"RestAPIforMySql.Controllers.DefinitionsController.Post (RestAPIforMySql)"' with id '"afbbba3d-9e9b-4faa-9553-dfb1e8780804"' did not match the constraint '"Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint"'
+2017-04-14 09:03:45.398 -04:00 [Debug] Executing action "RestAPIforMySql.Controllers.DefinitionsController.Get (RestAPIforMySql)"
+2017-04-14 09:03:45.531 -04:00 [Information] Executing action method "RestAPIforMySql.Controllers.DefinitionsController.Get (RestAPIforMySql)" with arguments (null) - ModelState is Valid
+2017-04-14 09:03:45.943 -04:00 [Debug] Compiling query model: 
+'from ExtractDefinitions b in DbSet<ExtractDefinitions>
+order by b.Name asc
+select b'
+2017-04-14 09:03:45.961 -04:00 [Debug] Optimized query model: 
+'from ExtractDefinitions b in DbSet<ExtractDefinitions>
+order by b.Name asc
+select b'
+2017-04-14 09:03:46.072 -04:00 [Debug] TRACKED: True
+(QueryContext queryContext) => IEnumerable<ExtractDefinitions> _ShapedQuery(
+    queryContext: queryContext, 
+    shaperCommandContext: SelectExpression: 
+        SELECT `b`.`Id`, `b`.`ApplicationId`, `b`.`CreatedBy`, `b`.`DateCreated`, `b`.`DateUpdated`, `b`.`EnterpriseId`, `b`.`Name`, `b`.`QueryDefinition`, `b`.`UpdatedBy`
+        FROM `ExtractDefinitions` AS `b`
+        ORDER BY `b`.`Name`
+    , 
+    shaper: UnbufferedEntityShaper<ExtractDefinitions>
+)
+
+2017-04-14 09:03:46.131 -04:00 [Debug] Opening connection to database 'model1' on server '127.0.0.1'.
+2017-04-14 09:03:46.322 -04:00 [Information] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `b`.`Id`, `b`.`ApplicationId`, `b`.`CreatedBy`, `b`.`DateCreated`, `b`.`DateUpdated`, `b`.`EnterpriseId`, `b`.`Name`, `b`.`QueryDefinition`, `b`.`UpdatedBy`
+FROM `ExtractDefinitions` AS `b`
+ORDER BY `b`.`Name`
+2017-04-14 09:03:46.388 -04:00 [Debug] Closing connection to database 'model1' on server '127.0.0.1'.
+2017-04-14 09:03:46.391 -04:00 [Debug] Executed action method "RestAPIforMySql.Controllers.DefinitionsController.Get (RestAPIforMySql)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult".
+2017-04-14 09:03:46.421 -04:00 [Debug] Selected output formatter '"Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter"' and content type '"application/json"' to write the response.
+2017-04-14 09:03:46.422 -04:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-04-14 09:03:46.647 -04:00 [Information] Executed action "RestAPIforMySql.Controllers.DefinitionsController.Get (RestAPIforMySql)" in 1244.8036ms
+2017-04-14 09:03:46.654 -04:00 [Debug] Connection id ""0HL436O1Q9I71"" completed keep alive response.
+2017-04-14 09:03:46.658 -04:00 [Information] Request finished in 1532.993ms 200 application/json; charset=utf-8
+2017-04-14 09:03:49.921 -04:00 [Debug] Connection id ""0HL436O1Q9I71"" received FIN.
+2017-04-14 09:03:49.922 -04:00 [Debug] Connection id ""0HL436O1Q9I71"" disconnecting.
+2017-04-14 09:03:49.922 -04:00 [Debug] Connection id ""0HL436O1Q9I71"" sending FIN.
+2017-04-14 09:03:49.922 -04:00 [Debug] Connection id ""0HL436O1Q9I71"" sent FIN with status "0".
+2017-04-14 09:03:49.922 -04:00 [Debug] Connection id ""0HL436O1Q9I71"" stopped.
+2017-04-14 09:03:54.680 -04:00 [Debug] Connection id ""0HL436O1Q9I72"" started.
+2017-04-14 09:03:54.693 -04:00 [Information] Request starting HTTP/1.1 POST https://www.3m.hubservices.com:8081/api/definitions/ application/json; charset=utf-8 205
+2017-04-14 09:03:54.693 -04:00 [Debug] Request successfully matched the route with name 'null' and template '"api/Definitions"'.
+2017-04-14 09:03:54.693 -04:00 [Debug] Action '"RestAPIforMySql.Controllers.DefinitionsController.Get (RestAPIforMySql)"' with id '"41c89954-a0a9-4876-a2d4-b4c90061b640"' did not match the constraint '"Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint"'
+2017-04-14 09:03:54.697 -04:00 [Debug] Executing action "RestAPIforMySql.Controllers.DefinitionsController.Post (RestAPIforMySql)"
+2017-04-14 09:03:54.739 -04:00 [Debug] Selected input formatter '"Microsoft.AspNetCore.Mvc.Formatters.JsonInputFormatter"' for content type '"application/json; charset=utf-8"'.
+2017-04-14 09:03:54.804 -04:00 [Information] Executing action method "RestAPIforMySql.Controllers.DefinitionsController.Post (RestAPIforMySql)" with arguments (["{
+  \"applicationId\": 124,
+  \"enterpriseId\": 53002,
+  \"name\": \"Test 5 Name\",
+  \"queryDefinition\": \"Some other definition\",
+  \"dateCreated\": \"2017-04-13T15:02:24\",
+  \"dateUpdated\": \"2017-04-13T15:02:24\",
+  \"createdBy\": 1,
+  \"updatedBy\": 2
+}"]) - ModelState is Valid
+2017-04-14 09:03:55.154 -04:00 [Debug] Inside DefinitionsController POST Method. Received: SOMETHING
+2017-04-14 09:03:55.249 -04:00 [Debug] result: {"applicationId":124,"enterpriseId":53002,"name":"Test 5 Name","queryDefinition":"Some other definition","dateCreated":"2017-04-13T15:02:24","dateUpdated":"2017-04-13T15:02:24","createdBy":1,"updatedBy":2}
+2017-04-14 09:03:55.250 -04:00 [Debug] Deserializing POST data...
+2017-04-14 09:03:55.273 -04:00 [Debug] Insert into Database...
+2017-04-14 09:03:55.333 -04:00 [Debug] Opening connection to database 'model1' on server '127.0.0.1'.
+2017-04-14 09:03:55.342 -04:00 [Debug] Beginning transaction with isolation level 'Unspecified'.
+2017-04-14 09:03:55.413 -04:00 [Information] Executed DbCommand (6ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?', @p5='?' (Size = 255), @p6='?' (Size = 255), @p7='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO `ExtractDefinitions` (`ApplicationId`, `CreatedBy`, `DateCreated`, `DateUpdated`, `EnterpriseId`, `Name`, `QueryDefinition`, `UpdatedBy`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT `Id`
+FROM `ExtractDefinitions`
+WHERE ROW_COUNT() = 1
+ AND `Id`=LAST_INSERT_ID();
+2017-04-14 09:03:55.426 -04:00 [Debug] Committing transaction.
+2017-04-14 09:03:55.428 -04:00 [Debug] Closing connection to database 'model1' on server '127.0.0.1'.
+2017-04-14 09:03:55.431 -04:00 [Debug] Insert completed...
+2017-04-14 09:03:55.431 -04:00 [Debug] Executed action method "RestAPIforMySql.Controllers.DefinitionsController.Post (RestAPIforMySql)", returned result "Microsoft.AspNetCore.Mvc.OkResult".
+2017-04-14 09:03:55.435 -04:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2017-04-14 09:03:55.436 -04:00 [Information] Executed action "RestAPIforMySql.Controllers.DefinitionsController.Post (RestAPIforMySql)" in 737.7831ms
+2017-04-14 09:03:55.438 -04:00 [Debug] Connection id ""0HL436O1Q9I72"" completed keep alive response.
+2017-04-14 09:03:55.438 -04:00 [Debug] Connection id ""0HL436O1Q9I72"" received FIN.
+2017-04-14 09:03:55.438 -04:00 [Information] Request finished in 745.6289ms 200 
+2017-04-14 09:03:55.438 -04:00 [Debug] Connection id ""0HL436O1Q9I72"" disconnecting.
+2017-04-14 09:03:55.439 -04:00 [Debug] Connection id ""0HL436O1Q9I72"" sending FIN.
+2017-04-14 09:03:55.439 -04:00 [Debug] Connection id ""0HL436O1Q9I72"" sent FIN with status "0".
+2017-04-14 09:03:55.439 -04:00 [Debug] Connection id ""0HL436O1Q9I72"" stopped.
+2017-04-14 09:03:55.444 -04:00 [Debug] Connection id ""0HL436O1Q9I73"" started.
+2017-04-14 09:03:55.456 -04:00 [Information] Request starting HTTP/1.1 GET https://www.3m.hubservices.com:8081/api/definitions  
+2017-04-14 09:03:55.456 -04:00 [Debug] Request successfully matched the route with name 'null' and template '"api/Definitions"'.
+2017-04-14 09:03:55.456 -04:00 [Debug] Action '"RestAPIforMySql.Controllers.DefinitionsController.Post (RestAPIforMySql)"' with id '"afbbba3d-9e9b-4faa-9553-dfb1e8780804"' did not match the constraint '"Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint"'
+2017-04-14 09:03:55.457 -04:00 [Debug] Executing action "RestAPIforMySql.Controllers.DefinitionsController.Get (RestAPIforMySql)"
+2017-04-14 09:03:55.457 -04:00 [Information] Executing action method "RestAPIforMySql.Controllers.DefinitionsController.Get (RestAPIforMySql)" with arguments (null) - ModelState is Valid
+2017-04-14 09:03:55.462 -04:00 [Debug] Opening connection to database 'model1' on server '127.0.0.1'.
+2017-04-14 09:03:55.465 -04:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `b`.`Id`, `b`.`ApplicationId`, `b`.`CreatedBy`, `b`.`DateCreated`, `b`.`DateUpdated`, `b`.`EnterpriseId`, `b`.`Name`, `b`.`QueryDefinition`, `b`.`UpdatedBy`
+FROM `ExtractDefinitions` AS `b`
+ORDER BY `b`.`Name`
+2017-04-14 09:03:55.465 -04:00 [Debug] Closing connection to database 'model1' on server '127.0.0.1'.
+2017-04-14 09:03:55.465 -04:00 [Debug] Executed action method "RestAPIforMySql.Controllers.DefinitionsController.Get (RestAPIforMySql)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult".
+2017-04-14 09:03:55.466 -04:00 [Debug] Selected output formatter '"Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter"' and content type '"application/json"' to write the response.
+2017-04-14 09:03:55.466 -04:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-04-14 09:03:55.468 -04:00 [Information] Executed action "RestAPIforMySql.Controllers.DefinitionsController.Get (RestAPIforMySql)" in 10.4669ms
+2017-04-14 09:03:55.468 -04:00 [Debug] Connection id ""0HL436O1Q9I73"" completed keep alive response.
+2017-04-14 09:03:55.468 -04:00 [Information] Request finished in 11.9086ms 200 application/json; charset=utf-8
+2017-04-14 09:03:55.468 -04:00 [Debug] Connection id ""0HL436O1Q9I73"" received FIN.
+2017-04-14 09:03:55.468 -04:00 [Debug] Connection id ""0HL436O1Q9I73"" disconnecting.
+2017-04-14 09:03:55.468 -04:00 [Debug] Connection id ""0HL436O1Q9I73"" sending FIN.
+2017-04-14 09:03:55.469 -04:00 [Debug] Connection id ""0HL436O1Q9I73"" sent FIN with status "0".
+2017-04-14 09:03:55.469 -04:00 [Debug] Connection id ""0HL436O1Q9I73"" stopped.
+2017-04-14 09:03:55.474 -04:00 [Debug] Connection id ""0HL436O1Q9I74"" started.
+2017-04-14 09:03:55.488 -04:00 [Information] Request starting HTTP/1.1 GET https://www.3m.hubservices.com:8081/api/definitions/9  
+2017-04-14 09:03:55.488 -04:00 [Debug] Request successfully matched the route with name 'null' and template '"api/Definitions/{id}"'.
+2017-04-14 09:03:55.489 -04:00 [Debug] Action '"RestAPIforMySql.Controllers.DefinitionsController.Put (RestAPIforMySql)"' with id '"1aad1fd8-de9d-4795-83a6-e7e09ef190db"' did not match the constraint '"Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint"'
+2017-04-14 09:03:55.489 -04:00 [Debug] Action '"RestAPIforMySql.Controllers.DefinitionsController.Delete (RestAPIforMySql)"' with id '"55d844c7-11dd-4c30-9cab-1fb2753b3f01"' did not match the constraint '"Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint"'
+2017-04-14 09:03:55.489 -04:00 [Debug] Executing action "RestAPIforMySql.Controllers.DefinitionsController.Get (RestAPIforMySql)"
+2017-04-14 09:03:55.498 -04:00 [Information] Executing action method "RestAPIforMySql.Controllers.DefinitionsController.Get (RestAPIforMySql)" with arguments (["9"]) - ModelState is Valid
+2017-04-14 09:03:55.501 -04:00 [Debug] Inside DefinitionsController GET Method. Id: 9
+2017-04-14 09:03:55.518 -04:00 [Debug] Compiling query model: 
+'(from ExtractDefinitions b in DbSet<ExtractDefinitions>
+where b.Id != null && bool Equals(
+    objA: (object) b.Id, 
+    objB: (object) __id_0
+)
+
+order by b.Name asc
+select b)
+.FirstOrDefault()'
+2017-04-14 09:03:55.528 -04:00 [Debug] Optimized query model: 
+'(from ExtractDefinitions b in DbSet<ExtractDefinitions>
+where b.Id != null && bool Equals(
+    objA: (object) b.Id, 
+    objB: (object) __id_0
+)
+
+order by b.Name asc
+select b)
+.FirstOrDefault()'
+2017-04-14 09:03:55.563 -04:00 [Warning] The LINQ expression 'Equals(Convert([b].Id), Convert(__id_0))' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider.
+2017-04-14 09:03:55.574 -04:00 [Warning] The LINQ expression 'FirstOrDefault()' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider.
+2017-04-14 09:03:55.584 -04:00 [Debug] TRACKED: True
+(QueryContext queryContext) => IEnumerable<ExtractDefinitions> _ToSequence(
+    element: ExtractDefinitions FirstOrDefault(
+        source: IEnumerable<ExtractDefinitions> _Where(
+            source: IEnumerable<ExtractDefinitions> _ShapedQuery(
+                queryContext: queryContext, 
+                shaperCommandContext: SelectExpression: 
+                    SELECT `b`.`Id`, `b`.`ApplicationId`, `b`.`CreatedBy`, `b`.`DateCreated`, `b`.`DateUpdated`, `b`.`EnterpriseId`, `b`.`Name`, `b`.`QueryDefinition`, `b`.`UpdatedBy`
+                    FROM `ExtractDefinitions` AS `b`
+                    WHERE `b`.`Id` IS NOT NULL
+                    ORDER BY `b`.`Name`
+                , 
+                shaper: UnbufferedEntityShaper<ExtractDefinitions>
+            )
+            , 
+            predicate: (ExtractDefinitions b) => bool Equals(
+                objA: (object) b.Id, 
+                objB: (object) int GetParameterValue(
+                    queryContext: queryContext, 
+                    parameterName: "__id_0"
+                )
+            )
+        )
+    )
+)
+
+2017-04-14 09:03:55.586 -04:00 [Debug] Opening connection to database 'model1' on server '127.0.0.1'.
+2017-04-14 09:03:55.588 -04:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `b`.`Id`, `b`.`ApplicationId`, `b`.`CreatedBy`, `b`.`DateCreated`, `b`.`DateUpdated`, `b`.`EnterpriseId`, `b`.`Name`, `b`.`QueryDefinition`, `b`.`UpdatedBy`
+FROM `ExtractDefinitions` AS `b`
+WHERE `b`.`Id` IS NOT NULL
+ORDER BY `b`.`Name`
+2017-04-14 09:03:55.590 -04:00 [Debug] Closing connection to database 'model1' on server '127.0.0.1'.
+2017-04-14 09:03:55.591 -04:00 [Debug] Executed action method "RestAPIforMySql.Controllers.DefinitionsController.Get (RestAPIforMySql)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult".
+2017-04-14 09:03:55.591 -04:00 [Debug] Selected output formatter '"Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter"' and content type '"application/json"' to write the response.
+2017-04-14 09:03:55.591 -04:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-04-14 09:03:55.592 -04:00 [Information] Executed action "RestAPIforMySql.Controllers.DefinitionsController.Get (RestAPIforMySql)" in 101.8787ms
+2017-04-14 09:03:55.592 -04:00 [Debug] Connection id ""0HL436O1Q9I74"" completed keep alive response.
+2017-04-14 09:03:55.592 -04:00 [Information] Request finished in 103.9608ms 200 application/json; charset=utf-8
+2017-04-14 09:03:55.592 -04:00 [Debug] Connection id ""0HL436O1Q9I74"" received FIN.
+2017-04-14 09:03:55.592 -04:00 [Debug] Connection id ""0HL436O1Q9I74"" disconnecting.
+2017-04-14 09:03:55.592 -04:00 [Debug] Connection id ""0HL436O1Q9I74"" sending FIN.
+2017-04-14 09:03:55.593 -04:00 [Debug] Connection id ""0HL436O1Q9I74"" sent FIN with status "0".
+2017-04-14 09:03:55.593 -04:00 [Debug] Connection id ""0HL436O1Q9I74"" stopped.
+2017-04-14 09:03:55.608 -04:00 [Debug] Connection id ""0HL436O1Q9I75"" started.
+2017-04-14 09:03:55.624 -04:00 [Information] Request starting HTTP/1.1 PUT https://www.3m.hubservices.com:8081/api/definitions/9 application/json; charset=utf-8 206
+2017-04-14 09:03:55.624 -04:00 [Debug] Request successfully matched the route with name 'null' and template '"api/Definitions/{id}"'.
+2017-04-14 09:03:55.624 -04:00 [Debug] Action '"RestAPIforMySql.Controllers.DefinitionsController.Get (RestAPIforMySql)"' with id '"a496efc0-f90d-4f0d-9c6b-4633aa3f42a5"' did not match the constraint '"Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint"'
+2017-04-14 09:03:55.624 -04:00 [Debug] Action '"RestAPIforMySql.Controllers.DefinitionsController.Delete (RestAPIforMySql)"' with id '"55d844c7-11dd-4c30-9cab-1fb2753b3f01"' did not match the constraint '"Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint"'
+2017-04-14 09:03:55.624 -04:00 [Debug] Executing action "RestAPIforMySql.Controllers.DefinitionsController.Put (RestAPIforMySql)"
+2017-04-14 09:03:55.625 -04:00 [Debug] Selected input formatter '"Microsoft.AspNetCore.Mvc.Formatters.JsonInputFormatter"' for content type '"application/json; charset=utf-8"'.
+2017-04-14 09:03:55.626 -04:00 [Information] Executing action method "RestAPIforMySql.Controllers.DefinitionsController.Put (RestAPIforMySql)" with arguments (["9", "{
+  \"applicationId\": 125,
+  \"enterpriseId\": 53005,
+  \"name\": \"Test 10 Name\",
+  \"queryDefinition\": \"Some other definition\",
+  \"dateCreated\": \"2017-04-13T15:02:24\",
+  \"dateUpdated\": \"2017-04-13T15:02:24\",
+  \"createdBy\": 1,
+  \"updatedBy\": 2
+}"]) - ModelState is Valid
+2017-04-14 09:03:55.631 -04:00 [Debug] Inside DefinitionsController PUT Method. Received: SOMETHING
+2017-04-14 09:03:55.634 -04:00 [Debug] result: {"applicationId":125,"enterpriseId":53005,"name":"Test 10 Name","queryDefinition":"Some other definition","dateCreated":"2017-04-13T15:02:24","dateUpdated":"2017-04-13T15:02:24","createdBy":1,"updatedBy":2}
+2017-04-14 09:03:55.635 -04:00 [Debug] Deserializing PUT data...
+2017-04-14 09:03:55.635 -04:00 [Debug] Update Database record: 9
+2017-04-14 09:03:55.637 -04:00 [Debug] Opening connection to database 'model1' on server '127.0.0.1'.
+2017-04-14 09:03:55.638 -04:00 [Debug] Beginning transaction with isolation level 'Unspecified'.
+2017-04-14 09:03:55.643 -04:00 [Information] Executed DbCommand (0ms) [Parameters=[@p8='?', @p0='?', @p1='?', @p2='?', @p3='?', @p4='?', @p5='?' (Size = 255), @p6='?' (Size = 255), @p7='?'], CommandType='Text', CommandTimeout='30']
+UPDATE `ExtractDefinitions` SET `ApplicationId` = @p0, `CreatedBy` = @p1, `DateCreated` = @p2, `DateUpdated` = @p3, `EnterpriseId` = @p4, `Name` = @p5, `QueryDefinition` = @p6, `UpdatedBy` = @p7
+WHERE `Id` = @p8;
+SELECT ROW_COUNT();
+2017-04-14 09:03:55.644 -04:00 [Debug] Committing transaction.
+2017-04-14 09:03:55.646 -04:00 [Debug] Closing connection to database 'model1' on server '127.0.0.1'.
+2017-04-14 09:03:55.646 -04:00 [Debug] Update completed...
+2017-04-14 09:03:55.646 -04:00 [Debug] Executed action method "RestAPIforMySql.Controllers.DefinitionsController.Put (RestAPIforMySql)", returned result "Microsoft.AspNetCore.Mvc.OkResult".
+2017-04-14 09:03:55.647 -04:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2017-04-14 09:03:55.647 -04:00 [Information] Executed action "RestAPIforMySql.Controllers.DefinitionsController.Put (RestAPIforMySql)" in 22.0515ms
+2017-04-14 09:03:55.647 -04:00 [Debug] Connection id ""0HL436O1Q9I75"" completed keep alive response.
+2017-04-14 09:03:55.647 -04:00 [Information] Request finished in 23.6798ms 200 
+2017-04-14 09:03:55.647 -04:00 [Debug] Connection id ""0HL436O1Q9I75"" received FIN.
+2017-04-14 09:03:55.648 -04:00 [Debug] Connection id ""0HL436O1Q9I75"" disconnecting.
+2017-04-14 09:03:55.648 -04:00 [Debug] Connection id ""0HL436O1Q9I75"" sending FIN.
+2017-04-14 09:03:55.648 -04:00 [Debug] Connection id ""0HL436O1Q9I75"" sent FIN with status "0".
+2017-04-14 09:03:55.648 -04:00 [Debug] Connection id ""0HL436O1Q9I75"" stopped.
+2017-04-14 09:03:55.652 -04:00 [Debug] Connection id ""0HL436O1Q9I76"" started.
+2017-04-14 09:03:55.667 -04:00 [Information] Request starting HTTP/1.1 GET https://www.3m.hubservices.com:8081/api/definitions  
+2017-04-14 09:03:55.667 -04:00 [Debug] Request successfully matched the route with name 'null' and template '"api/Definitions"'.
+2017-04-14 09:03:55.667 -04:00 [Debug] Action '"RestAPIforMySql.Controllers.DefinitionsController.Post (RestAPIforMySql)"' with id '"afbbba3d-9e9b-4faa-9553-dfb1e8780804"' did not match the constraint '"Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint"'
+2017-04-14 09:03:55.667 -04:00 [Debug] Executing action "RestAPIforMySql.Controllers.DefinitionsController.Get (RestAPIforMySql)"
+2017-04-14 09:03:55.668 -04:00 [Information] Executing action method "RestAPIforMySql.Controllers.DefinitionsController.Get (RestAPIforMySql)" with arguments (null) - ModelState is Valid
+2017-04-14 09:03:55.669 -04:00 [Debug] Opening connection to database 'model1' on server '127.0.0.1'.
+2017-04-14 09:03:55.671 -04:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `b`.`Id`, `b`.`ApplicationId`, `b`.`CreatedBy`, `b`.`DateCreated`, `b`.`DateUpdated`, `b`.`EnterpriseId`, `b`.`Name`, `b`.`QueryDefinition`, `b`.`UpdatedBy`
+FROM `ExtractDefinitions` AS `b`
+ORDER BY `b`.`Name`
+2017-04-14 09:03:55.671 -04:00 [Debug] Closing connection to database 'model1' on server '127.0.0.1'.
+2017-04-14 09:03:55.671 -04:00 [Debug] Executed action method "RestAPIforMySql.Controllers.DefinitionsController.Get (RestAPIforMySql)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult".
+2017-04-14 09:03:55.672 -04:00 [Debug] Selected output formatter '"Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter"' and content type '"application/json"' to write the response.
+2017-04-14 09:03:55.672 -04:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-04-14 09:03:55.672 -04:00 [Information] Executed action "RestAPIforMySql.Controllers.DefinitionsController.Get (RestAPIforMySql)" in 4.8399ms
+2017-04-14 09:03:55.673 -04:00 [Debug] Connection id ""0HL436O1Q9I76"" completed keep alive response.
+2017-04-14 09:03:55.673 -04:00 [Information] Request finished in 6.6001ms 200 application/json; charset=utf-8
+2017-04-14 09:03:55.673 -04:00 [Debug] Connection id ""0HL436O1Q9I76"" received FIN.
+2017-04-14 09:03:55.673 -04:00 [Debug] Connection id ""0HL436O1Q9I76"" disconnecting.
+2017-04-14 09:03:55.674 -04:00 [Debug] Connection id ""0HL436O1Q9I76"" sending FIN.
+2017-04-14 09:03:55.674 -04:00 [Debug] Connection id ""0HL436O1Q9I76"" sent FIN with status "0".
+2017-04-14 09:03:55.674 -04:00 [Debug] Connection id ""0HL436O1Q9I76"" stopped.
+2017-04-14 09:03:55.684 -04:00 [Debug] Connection id ""0HL436O1Q9I77"" started.
+2017-04-14 09:03:55.704 -04:00 [Information] Request starting HTTP/1.1 DELETE https://www.3m.hubservices.com:8081/api/definitions/9  0
+2017-04-14 09:03:55.704 -04:00 [Debug] Request successfully matched the route with name 'null' and template '"api/Definitions/{id}"'.
+2017-04-14 09:03:55.704 -04:00 [Debug] Action '"RestAPIforMySql.Controllers.DefinitionsController.Get (RestAPIforMySql)"' with id '"a496efc0-f90d-4f0d-9c6b-4633aa3f42a5"' did not match the constraint '"Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint"'
+2017-04-14 09:03:55.704 -04:00 [Debug] Action '"RestAPIforMySql.Controllers.DefinitionsController.Put (RestAPIforMySql)"' with id '"1aad1fd8-de9d-4795-83a6-e7e09ef190db"' did not match the constraint '"Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint"'
+2017-04-14 09:03:55.705 -04:00 [Debug] Executing action "RestAPIforMySql.Controllers.DefinitionsController.Delete (RestAPIforMySql)"
+2017-04-14 09:03:55.706 -04:00 [Information] Executing action method "RestAPIforMySql.Controllers.DefinitionsController.Delete (RestAPIforMySql)" with arguments (["9"]) - ModelState is Valid
+2017-04-14 09:03:55.707 -04:00 [Debug] Inside DefinitionsController DEL Method. Id: 9
+2017-04-14 09:03:55.711 -04:00 [Debug] Opening connection to database 'model1' on server '127.0.0.1'.
+2017-04-14 09:03:55.712 -04:00 [Debug] Beginning transaction with isolation level 'Unspecified'.
+2017-04-14 09:03:55.715 -04:00 [Information] Executed DbCommand (0ms) [Parameters=[@p0='?'], CommandType='Text', CommandTimeout='30']
+DELETE FROM `ExtractDefinitions`
+WHERE `Id` = @p0;
+SELECT ROW_COUNT();
+2017-04-14 09:03:55.715 -04:00 [Debug] Committing transaction.
+2017-04-14 09:03:55.717 -04:00 [Debug] Closing connection to database 'model1' on server '127.0.0.1'.
+2017-04-14 09:03:55.721 -04:00 [Debug] Executed action method "RestAPIforMySql.Controllers.DefinitionsController.Delete (RestAPIforMySql)", returned result "Microsoft.AspNetCore.Mvc.OkResult".
+2017-04-14 09:03:55.721 -04:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2017-04-14 09:03:55.722 -04:00 [Information] Executed action "RestAPIforMySql.Controllers.DefinitionsController.Delete (RestAPIforMySql)" in 16.3417ms
+2017-04-14 09:03:55.722 -04:00 [Debug] Connection id ""0HL436O1Q9I77"" completed keep alive response.
+2017-04-14 09:03:55.722 -04:00 [Information] Request finished in 18.7349ms 200 
+2017-04-14 09:03:55.723 -04:00 [Debug] Connection id ""0HL436O1Q9I77"" received FIN.
+2017-04-14 09:03:55.723 -04:00 [Debug] Connection id ""0HL436O1Q9I77"" disconnecting.
+2017-04-14 09:03:55.723 -04:00 [Debug] Connection id ""0HL436O1Q9I77"" sending FIN.
+2017-04-14 09:03:55.723 -04:00 [Debug] Connection id ""0HL436O1Q9I77"" sent FIN with status "0".
+2017-04-14 09:03:55.723 -04:00 [Debug] Connection id ""0HL436O1Q9I77"" stopped.
+2017-04-14 09:03:55.728 -04:00 [Debug] Connection id ""0HL436O1Q9I78"" started.
+2017-04-14 09:03:55.743 -04:00 [Information] Request starting HTTP/1.1 GET https://www.3m.hubservices.com:8081/api/definitions  
+2017-04-14 09:03:55.743 -04:00 [Debug] Request successfully matched the route with name 'null' and template '"api/Definitions"'.
+2017-04-14 09:03:55.744 -04:00 [Debug] Action '"RestAPIforMySql.Controllers.DefinitionsController.Post (RestAPIforMySql)"' with id '"afbbba3d-9e9b-4faa-9553-dfb1e8780804"' did not match the constraint '"Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint"'
+2017-04-14 09:03:55.744 -04:00 [Debug] Executing action "RestAPIforMySql.Controllers.DefinitionsController.Get (RestAPIforMySql)"
+2017-04-14 09:03:55.744 -04:00 [Information] Executing action method "RestAPIforMySql.Controllers.DefinitionsController.Get (RestAPIforMySql)" with arguments (null) - ModelState is Valid
+2017-04-14 09:03:55.744 -04:00 [Debug] Opening connection to database 'model1' on server '127.0.0.1'.
+2017-04-14 09:03:55.746 -04:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `b`.`Id`, `b`.`ApplicationId`, `b`.`CreatedBy`, `b`.`DateCreated`, `b`.`DateUpdated`, `b`.`EnterpriseId`, `b`.`Name`, `b`.`QueryDefinition`, `b`.`UpdatedBy`
+FROM `ExtractDefinitions` AS `b`
+ORDER BY `b`.`Name`
+2017-04-14 09:03:55.746 -04:00 [Debug] Closing connection to database 'model1' on server '127.0.0.1'.
+2017-04-14 09:03:55.746 -04:00 [Debug] Executed action method "RestAPIforMySql.Controllers.DefinitionsController.Get (RestAPIforMySql)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult".
+2017-04-14 09:03:55.746 -04:00 [Debug] Selected output formatter '"Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter"' and content type '"application/json"' to write the response.
+2017-04-14 09:03:55.747 -04:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-04-14 09:03:55.747 -04:00 [Information] Executed action "RestAPIforMySql.Controllers.DefinitionsController.Get (RestAPIforMySql)" in 3.2282ms
+2017-04-14 09:03:55.747 -04:00 [Debug] Connection id ""0HL436O1Q9I78"" completed keep alive response.
+2017-04-14 09:03:55.748 -04:00 [Information] Request finished in 4.4166ms 200 application/json; charset=utf-8
+2017-04-14 09:03:55.748 -04:00 [Debug] Connection id ""0HL436O1Q9I78"" received FIN.
+2017-04-14 09:03:55.748 -04:00 [Debug] Connection id ""0HL436O1Q9I78"" disconnecting.
+2017-04-14 09:03:55.748 -04:00 [Debug] Connection id ""0HL436O1Q9I78"" sending FIN.
+2017-04-14 09:03:55.748 -04:00 [Debug] Connection id ""0HL436O1Q9I78"" sent FIN with status "0".
+2017-04-14 09:03:55.748 -04:00 [Debug] Connection id ""0HL436O1Q9I78"" stopped.
