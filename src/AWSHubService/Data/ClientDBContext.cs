@@ -1184,9 +1184,10 @@ namespace AWSHubService.Data
 
             modelBuilder.Entity<vwOutpatient>(entity =>
             {
+                entity.HasKey(e => e.Id).HasName("Id"); ;
                 entity.Property(e => e.EnterpriseName).HasMaxLength(50);
                 entity.Property(e => e.EnterpriseID).HasMaxLength(50);
-                entity.HasKey(e => new { e.ExportQueueKey });
+                entity.Property(e => e.ExportQueueKey).HasMaxLength(50);
                 entity.Property(e => e.EventTypeKey).HasMaxLength(50);
                 entity.Property(e => e.RecordType).HasMaxLength(50);
                 entity.Property(e => e.CodeSetKey).HasMaxLength(50);
@@ -1372,7 +1373,7 @@ namespace AWSHubService.Data
 
             modelBuilder.Entity<vwOutpatientDetails>(entity =>
             {
-                entity.HasKey(e => new { e.ExportQueueKey, e.VisitKey });
+                entity.HasKey(e => e.vwOutpatientId).HasName("vwOutpatientId");
                 entity.Property(e => e.EnterpriseName).HasMaxLength(50);
                 entity.Property(e => e.EnterpriseID).HasMaxLength(50);
                 entity.Property(e => e.ExportQueueKey).HasMaxLength(50);

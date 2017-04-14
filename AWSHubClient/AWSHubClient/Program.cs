@@ -26,7 +26,9 @@ namespace AWSHubClient
             {
                 //Task task = SendRequest(ConfigurationManager.AppSettings["URL"]);
                 //task.Wait();
-                Task task = SendRequestUsingClientCertificate(ConfigurationManager.AppSettings["URL"]);
+                //Task task = SendRequestUsingClientCertificate(ConfigurationManager.AppSettings["URL"]);
+                //task.Wait();
+                Task task = SendRequestUsingCredentials(ConfigurationManager.AppSettings["URL"]);
                 task.Wait();
             }
             catch (Exception ex)
@@ -120,10 +122,19 @@ namespace AWSHubClient
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                    HttpResponseMessage response = await client.GetAsync("api/Security");
+                    //HttpResponseMessage response = await client.GetAsync("api/Security");
+                    HttpResponseMessage response = await client.GetAsync("credentials");
                     if (response.IsSuccessStatusCode)
                     {
                         string content = await response.Content.ReadAsStringAsync();
+                        if (content.Contains("{\"results\":"))
+                        {
+                            content = content.Replace("{\"results\":", "");
+                            if (content.Contains(",\"responseStatus\""))
+                            {
+                                content = content.Substring(0, content.IndexOf(",\"responseStatus\""));
+                            }
+                        }
                         Credentials credentials = JsonConvert.DeserializeObject<Credentials>(content);
 
                         SessionAWSCredentials sessionCredentials = new SessionAWSCredentials(credentials.AccessKeyId,
@@ -167,6 +178,40 @@ namespace AWSHubClient
             }
         }
 
+
+        private static async Task SendRequestUsingCredentials(string url)
+        {
+            try
+            {
+                WebRequestHandler handler = new WebRequestHandler();
+
+                //handler.Credentials = new System.Net.Credentials
+                using (var client = new HttpClient(handler))
+                {
+                    client.BaseAddress = new Uri(url);
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    var byteArray = Encoding.ASCII.GetBytes("jblow:3mHIs");
+                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+
+                    //HttpResponseMessage response = await client.GetAsync("api/Security");
+                    HttpResponseMessage response = await client.GetAsync("inpatients");
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string content = await response.Content.ReadAsStringAsync();
+                        Console.WriteLine("Received response: {0}", content);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error, received status code {0}: {1}", response.StatusCode, response.ReasonPhrase);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("SendRequestUsingClientCertificate Error: " + ex.Message);
+            }
+        }
         public static bool ValidateServerCertificate(
           object sender,
           X509Certificate certificate,

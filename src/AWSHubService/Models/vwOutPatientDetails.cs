@@ -7,6 +7,7 @@ namespace AWSHubService.Models
 {
     public partial class vwOutpatientDetails
     {
+        public string vwOutpatientId { get; set; }
         public string EnterpriseName { get; set; }
         public string EnterpriseID { get; set; }
         public string ExportQueueKey { get; set; }
